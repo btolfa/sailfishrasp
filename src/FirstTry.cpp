@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     QGuiApplication * sailfishRaspApp = SailfishApp::application(argc, argv);
 
     QmlHandler* qh = new QmlHandler();
-
+    qDebug() << "WOEJDSAANDSADASDAS";
     QQuickView* qView = SailfishApp::createView();
     qView->setSource(SailfishApp::pathTo("qml/FirstTry.qml"));
     qView->rootContext()->setContextProperty("qmlHandler",qh);
