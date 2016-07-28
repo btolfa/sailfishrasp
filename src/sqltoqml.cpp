@@ -14,4 +14,3 @@ void SQLtoQML::loaddb()
           qDebug() << sdb.lastError().text();
     }
 }
-

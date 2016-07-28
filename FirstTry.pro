@@ -15,7 +15,8 @@ TARGET = FirstTry
 CONFIG += sailfishapp
 
 SOURCES += src/FirstTry.cpp \
-    src/qmlhandler.cpp
+    src/qmlhandler.cpp \
+    src/sqltoqml.cpp
     src/sqltoqml.cpp
 
 OTHER_FILES += qml/FirstTry.qml \
@@ -41,7 +42,8 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/FirstTry-de.ts
 
 HEADERS += \
-    src/qmlhandler.h
+    src/qmlhandler.h \
+    src/sqltoqml.h
     src/sqltoqml.h
 
 DISTFILES += \

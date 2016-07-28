@@ -11,9 +11,11 @@ public:
 
 signals:
 
-private slots:
+private:
     void loaddb();
+
 public slots:
+
 };
 
 #endif // SQLTOQML_H
