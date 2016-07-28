@@ -54,7 +54,6 @@ int main(int argc, char *argv[])
 
     QmlHandler* qh = new QmlHandler();
     SQLtoQML* sqltosqml = new SQLtoSQL();
-
     QQuickView* qView = SailfishApp::createView();
 
     qView->setSource(SailfishApp::pathTo("qml/FirstTry.qml"));

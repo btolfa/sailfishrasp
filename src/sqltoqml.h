@@ -14,6 +14,7 @@ signals:
 
 private:
     void loaddb();
+    QSqlDatabase sdb;
 public slots:
 
 };
