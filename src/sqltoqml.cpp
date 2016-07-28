@@ -3,22 +3,30 @@
 
 SQLtoQML::SQLtoQML(QObject *parent) : QObject(parent)
 {
-    loaddb();
+    getHints();
 }
 
 QList<QObject*> SQLtoQML::getHints()
 {
+    loaddb();
     QSqlQuery query;
-    query.exec("SELECT * FROM settlement");
-    qDebug() << query.result();
+    QSqlRecord rec = query.record();
+    query.exec("SELECT * from zone");
+    while (query.next()) {
+           int geo = query.value(rec.indexOf("id")).toInt();
+
+            qDebug() << "number is " << geo;
+        }
+   // qDebug() << query.lastError();
 }
 
 void SQLtoQML::loaddb()
 {
    sdb = QSqlDatabase::addDatabase("QSQLITE");
-    sdb.setDatabaseName("rasp.sqlite");
+    sdb.setDatabaseName("/usr/share/FirstTry/db/rasp.sqlite");
     if (!sdb.open()) {
           qDebug() << sdb.lastError().text();
+    }else{
+        qDebug() << "sql LOADED";
     }
-    getHints();
 }
