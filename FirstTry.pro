@@ -38,3 +38,6 @@ CONFIG += sailfishapp_i18n
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/FirstTry-de.ts
 
+DISTFILES += \
+    qml/views/SearchBox.qml
+
