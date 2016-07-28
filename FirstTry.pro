@@ -14,7 +14,8 @@ TARGET = FirstTry
 
 CONFIG += sailfishapp
 
-SOURCES += src/FirstTry.cpp
+SOURCES += src/FirstTry.cpp \
+    src/qmlhandler.cpp
 
 OTHER_FILES += qml/FirstTry.qml \
     qml/cover/CoverPage.qml \
@@ -37,4 +38,7 @@ CONFIG += sailfishapp_i18n
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/FirstTry-de.ts
+
+HEADERS += \
+    src/qmlhandler.h
 
