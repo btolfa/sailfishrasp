@@ -138,11 +138,20 @@ Page {
 
             Button {
                 id: button
-                text: "Выберите дату"
+                text: {
+                    var currentDate = new Date();
+                    var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+                    ];
+
+                    return "Поезда на " + currentDate.getDate() + " " + monthNames[currentDate.getMonth()] + " " + currentDate.getFullYear();
+                }
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
+                    var currentDate = new Date();
+
                     var dialog = pageStack.push(pickerComponent, {
-                                                    date: new Date('2016/07/28')
+                                                    date: currentDate
                                                 })
                     dialog.accepted.connect(function() {
                         button.text = "Поезда на " + dialog.dateText
