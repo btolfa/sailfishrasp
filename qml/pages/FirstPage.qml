@@ -133,38 +133,49 @@ Page {
                 }
             }
 
-// ДАТА
+            // ДАТА
 
             Button {
                 id: button
                 property var selectedDate: {return null}
+                property var monthNames: {return ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                                                  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+                                          ];}
+                property var formatDate: {
+                    function(date) {
+                        return "Поезда на " + date.getDate() + " " +
+                                button.monthNames[date.getMonth()] + " " +
+                                date.getFullYear();
+                    }
+                }
+                property var areSelectedAndCurrentDateEqual: {
+                    function() {
+                        var currentDate = new Date();
+                        if (button.selectedDate.getDate() !== currentDate.getDate() ||
+                                button.selectedDate.getMonth() !== currentDate.getMonth() ||
+                                button.selectedDate.getFullYear() !== currentDate.getFullYear()) {
+                            return false;
+                        }
+                        return true;
+                    }
+                }
                 text: {
                     var currentDate = new Date();
-                    var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-                    ];
                     button.selectedDate = currentDate;
-
-                    return "Поезда на " + currentDate.getDate() + " " +
-                            monthNames[currentDate.getMonth()] + " " +
-                            currentDate.getFullYear();
+                    return button.formatDate(currentDate);
                 }
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
-                    var currentDate = new Date();                         
-
-                    if (button.selectedDate.getDate() !== currentDate.getDate() ||
-                            button.selectedDate.getMonth() !== currentDate.getMonth() ||
-                            button.selectedDate.getFullYear() !== currentDate.getFullYear()) {
-                        currentDate = button.selectedDate;
-                    }
-
+                    var currentDate = new Date();
+                    var dateForCalendar = button.areSelectedAndCurrentDateEqual() === true ?
+                                currentDate :
+                                button.selectedDate;
                     var dialog = pageStack.push(pickerComponent, {
-                                                    date: currentDate
+                                                    date: dateForCalendar
                                                 })
                     dialog.accepted.connect(function() {
                         button.selectedDate = dialog.date;
-                        button.text = "Поезда на " + dialog.dateText;
+                        button.text = button.formatDate(dialog.date);
                     })
                 }
 
