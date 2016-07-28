@@ -44,6 +44,7 @@ Page {
             MenuItem {
                 text: qsTr("Сменить регион")
                 //                    onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
+                onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
             }
         }
 
