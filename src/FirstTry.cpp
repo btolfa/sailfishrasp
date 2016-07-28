@@ -32,11 +32,12 @@
 #include <QtQuick>
 #endif
 
-#include "qmlhandler.h"
 #include <sailfishapp.h>
 #include <QQuickView>
 #include <QGuiApplication>
 #include <QQmlContext>
+#include "qmlhandler.h"
+#include "sqltoqml.h"
 
 int main(int argc, char *argv[])
 {
@@ -52,10 +53,14 @@ int main(int argc, char *argv[])
     QGuiApplication * sailfishRaspApp = SailfishApp::application(argc, argv);
 
     QmlHandler* qh = new QmlHandler();
+    SQLtoQML* sqltosqml = new SQLtoSQL();
 
     QQuickView* qView = SailfishApp::createView();
+
     qView->setSource(SailfishApp::pathTo("qml/FirstTry.qml"));
-    qView->rootContext()->setContextProperty("qmlHandler",qh);
+    qView->rootContext()->setContextProperty("qmlHandler", qh);
+    qview->rootContext()->setContextProperty("SQLtoQML", sqltoqml.data());
+
     qView->show();
 
     return sailfishRaspApp->exec();

@@ -19,12 +19,8 @@ Column {
             EnterKey.enabled: text.length > 0
             EnterKey.iconSource: "image://theme/icon-m-enter-next"
             EnterKey.onClicked: textArea.focus = true
-            //            validator: DoubleValidator {
-            //                bottom: -1
-            //                top: 10
-            //                decimals: 2
-            //            }
-            //            inputMethodHints: Qt.ImhFormattedNumbersOnly
+
+            onTextChanged: if (text.length > 2) SQLToQML.getHints(text)
         }
 
         IconButton{
