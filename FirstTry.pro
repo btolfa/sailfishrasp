@@ -41,4 +41,5 @@ TRANSLATIONS += translations/FirstTry-de.ts
 
 HEADERS += \
     src/qmlhandler.h
-
+DISTFILES += \
+    qml/views/SearchBox.qml

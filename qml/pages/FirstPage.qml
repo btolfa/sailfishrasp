@@ -30,6 +30,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../views"
 
 Page {
     id: page
@@ -43,6 +44,7 @@ Page {
             MenuItem {
                 text: qsTr("Сменить регион")
                 //                    onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
+                onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
             }
         }
 
@@ -79,92 +81,61 @@ Page {
 
             // ОТКУДА
 
-            Row {
-                spacing: Theme.paddingSmall
-                width: parent.width
-
-                SearchField {
-                    id: searchFrom
-                    placeholderText: qsTr("Откуда")
-                    anchors.verticalCenter: parent.verticalCenter
-                    width: parent.width - locateFrom.width - Theme.horizontalPageMargin - parent.spacing
-                    EnterKey.enabled: text.length > 0
-                    EnterKey.iconSource: "image://theme/icon-m-enter-next"
-                    EnterKey.onClicked: textArea.focus = true
-                    //            validator: DoubleValidator {
-                    //                bottom: -1
-                    //                top: 10
-                    //                decimals: 2
-                    //            }
-                    //            inputMethodHints: Qt.ImhFormattedNumbersOnly
-                }
-
-                IconButton{
-                    id: locateFrom
-                    anchors.verticalCenter: parent.verticalCenter
-                    onClicked: whereFrom()
-                    icon.source:
-                        "image://theme/icon-m-whereami"
-                }
+            SearchBox {
+                id: searchFrom
+                placeHolderText: qsTr("Откуда")
             }
 
             // КУДА
 
-            Row {
-                spacing: Theme.paddingSmall
-                width: parent.width
-
-                SearchField {
-                    id: searchTo
-                    placeholderText: qsTr("Куда")
-                    anchors.verticalCenter: parent.verticalCenter
-                    width: parent.width - locateFrom.width - Theme.horizontalPageMargin - parent.spacing
-                    EnterKey.enabled: text.length > 0
-                    EnterKey.iconSource: "image://theme/icon-m-enter-next"
-                    EnterKey.onClicked: textArea.focus = true
-                }
-
-                IconButton{
-                    id: locateTo
-                    anchors.verticalCenter: parent.verticalCenter
-                    onClicked: whereTo()
-                    icon.source:
-                        "image://theme/icon-m-whereami"
-                }
+            SearchBox {
+                id: searchTo
+                placeHolderText: qsTr("Куда")
             }
 
-// ДАТА
+            // ДАТА
 
             Button {
                 id: button
                 property var selectedDate: {return null}
+                property var monthNames: {return ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                                                  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+                                          ];}
+                property var formatDate: {
+                    function(date) {
+                        return "Поезда на " + date.getDate() + " " +
+                                button.monthNames[date.getMonth()] + " " +
+                                date.getFullYear();
+                    }
+                }
+                property var areSelectedAndCurrentDateEqual: {
+                    function() {
+                        var currentDate = new Date();
+                        if (button.selectedDate.getDate() !== currentDate.getDate() ||
+                                button.selectedDate.getMonth() !== currentDate.getMonth() ||
+                                button.selectedDate.getFullYear() !== currentDate.getFullYear()) {
+                            return false;
+                        }
+                        return true;
+                    }
+                }
                 text: {
                     var currentDate = new Date();
-                    var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-                    ];
                     button.selectedDate = currentDate;
-
-                    return "Поезда на " + currentDate.getDate() + " " +
-                            monthNames[currentDate.getMonth()] + " " +
-                            currentDate.getFullYear();
+                    return button.formatDate(currentDate);
                 }
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
-                    var currentDate = new Date();                         
-
-                    if (button.selectedDate.getDate() !== currentDate.getDate() ||
-                            button.selectedDate.getMonth() !== currentDate.getMonth() ||
-                            button.selectedDate.getFullYear() !== currentDate.getFullYear()) {
-                        currentDate = button.selectedDate;
-                    }
-
+                    var currentDate = new Date();
+                    var dateForCalendar = button.areSelectedAndCurrentDateEqual() === true ?
+                                currentDate :
+                                button.selectedDate;
                     var dialog = pageStack.push(pickerComponent, {
-                                                    date: currentDate
+                                                    date: dateForCalendar
                                                 })
                     dialog.accepted.connect(function() {
                         button.selectedDate = dialog.date;
-                        button.text = "Поезда на " + dialog.dateText;
+                        button.text = button.formatDate(dialog.date);
                     })
                 }
 

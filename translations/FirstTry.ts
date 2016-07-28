@@ -15,10 +15,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Откуда</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Москва и область</source>
         <translation type="unfinished"></translation>
     </message>
@@ -27,7 +23,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Куда</source>
+        <source>Откуда</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Туда</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
