@@ -55,4 +55,4 @@ HEADERS += \
 DISTFILES += \
     qml/views/SearchBox.qml
 
-QT+=  sql
+QT+= sql positioning
