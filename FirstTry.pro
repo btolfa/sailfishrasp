@@ -16,6 +16,7 @@ CONFIG += sailfishapp
 
 SOURCES += src/FirstTry.cpp \
     src/qmlhandler.cpp
+    src/sqltoqml.cpp
 
 OTHER_FILES += qml/FirstTry.qml \
     qml/cover/CoverPage.qml \
@@ -41,5 +42,9 @@ TRANSLATIONS += translations/FirstTry-de.ts
 
 HEADERS += \
     src/qmlhandler.h
+    src/sqltoqml.h
+
 DISTFILES += \
     qml/views/SearchBox.qml
+
+QT+=  sql
