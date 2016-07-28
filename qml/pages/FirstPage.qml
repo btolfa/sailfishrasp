@@ -31,7 +31,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-
 Page {
     id: page
 
@@ -138,23 +137,34 @@ Page {
 
             Button {
                 id: button
+                property var selectedDate: {return null}
                 text: {
                     var currentDate = new Date();
                     var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                       "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
                     ];
+                    button.selectedDate = currentDate;
 
-                    return "Поезда на " + currentDate.getDate() + " " + monthNames[currentDate.getMonth()] + " " + currentDate.getFullYear();
+                    return "Поезда на " + currentDate.getDate() + " " +
+                            monthNames[currentDate.getMonth()] + " " +
+                            currentDate.getFullYear();
                 }
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
-                    var currentDate = new Date();
+                    var currentDate = new Date();                         
+
+                    if (button.selectedDate.getDate() !== currentDate.getDate() ||
+                            button.selectedDate.getMonth() !== currentDate.getMonth() ||
+                            button.selectedDate.getFullYear() !== currentDate.getFullYear()) {
+                        currentDate = button.selectedDate;
+                    }
 
                     var dialog = pageStack.push(pickerComponent, {
                                                     date: currentDate
                                                 })
                     dialog.accepted.connect(function() {
-                        button.text = "Поезда на " + dialog.dateText
+                        button.selectedDate = dialog.date;
+                        button.text = "Поезда на " + dialog.dateText;
                     })
                 }
 
