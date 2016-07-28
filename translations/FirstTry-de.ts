@@ -27,7 +27,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Туда</source>
+        <source>Куда</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

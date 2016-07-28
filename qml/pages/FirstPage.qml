@@ -31,6 +31,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../views"
+import "Util.js" as Util
 
 Page {
     id: page
@@ -94,48 +95,72 @@ Page {
 
             // ДАТА
 
-            Button {
+            BackgroundItem {
                 id: button
-                property var selectedDate: {return null}
-                property var monthNames: {return ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                                                  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-                                          ];}
-                property var formatDate: {
-                    function(date) {
-                        return "Поезда на " + date.getDate() + " " +
-                                button.monthNames[date.getMonth()] + " " +
-                                date.getFullYear();
-                    }
-                }
-                property var areSelectedAndCurrentDateEqual: {
-                    function() {
-                        var currentDate = new Date();
-                        if (button.selectedDate.getDate() !== currentDate.getDate() ||
-                                button.selectedDate.getMonth() !== currentDate.getMonth() ||
-                                button.selectedDate.getFullYear() !== currentDate.getFullYear()) {
-                            return false;
-                        }
-                        return true;
-                    }
-                }
-                text: {
-                    var currentDate = new Date();
-                    button.selectedDate = currentDate;
-                    return button.formatDate(currentDate);
-                }
+                width: parent.width
+                height: Screen.sizeCategory > Screen.Medium ? Theme.itemSizeMedium : Theme.itemSizeExtraSmall
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     var currentDate = new Date();
-                    var dateForCalendar = button.areSelectedAndCurrentDateEqual() === true ?
+                    var dateForCalendar = dateLabel.areSelectedAndCurrentDateEqual() === true ?
                                 currentDate :
-                                button.selectedDate;
+                                dateLabel.selectedDate;
                     var dialog = pageStack.push(pickerComponent, {
                                                     date: dateForCalendar
                                                 })
                     dialog.accepted.connect(function() {
-                        button.selectedDate = dialog.date;
-                        button.text = button.formatDate(dialog.date);
+                        dateLabel.selectedDate = dialog.date;
+                        dateLabel.text = dateLabel.formatDate(dialog.date);
                     })
+                }
+
+                Label {
+                    id: dateLabel
+                    anchors {
+                        right: moreImage.left
+                        rightMargin: Theme.paddingMedium
+                        verticalCenter: parent.verticalCenter
+                    }
+                    property var selectedDate: {return null}
+                    property var monthNames: {return ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                                                      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+                                              ];}
+                    property var formatDate: {
+                        function(date) {
+//                            return "Поезда на " + date.getDate() + " " +
+//                                    dateLabel.monthNames[date.getMonth()] + " " +
+//                                    date.getFullYear();
+                            return Util.formatDateWeekday(date)
+                        }
+                    }
+                    property var areSelectedAndCurrentDateEqual: {
+                        function() {
+                            var currentDate = new Date();
+                            if (dateLabel.selectedDate.getDate() !== currentDate.getDate() ||
+                                    dateLabel.selectedDate.getMonth() !== currentDate.getMonth() ||
+                                    dateLabel.selectedDate.getFullYear() !== currentDate.getFullYear()) {
+                                return false;
+                            }
+                            return true;
+                        }
+                    }
+                    text: {var currentDate = new Date();
+                        dateLabel.selectedDate = currentDate;
+                        return Util.formatDateWeekday(currentDate)}
+                    color: button.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    font.pixelSize: Theme.fontSizeLarge
+                }
+
+
+                Image {
+                    id: moreImage
+                    anchors {
+                        right: parent.right
+                        rightMargin: Screen.sizeCategory > Screen.Medium ? Theme.horizontalPageMargin : Theme.paddingMedium
+                        verticalCenter: parent.verticalCenter
+                    }
+                    source: "image://theme/icon-m-right?" + (button.highlighted ? Theme.highlightColor
+                                                                                : Theme.primaryColor)
                 }
 
                 Component {
