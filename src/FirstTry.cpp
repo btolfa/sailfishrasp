@@ -53,12 +53,12 @@ int main(int argc, char *argv[])
     QGuiApplication * sailfishRaspApp = SailfishApp::application(argc, argv);
 
     QmlHandler* qh = new QmlHandler();
-    SQLtoQML* sqltosqml = new SQLtoSQL();
+    SQLtoQML* sqltoqml = new SQLtoSQL();
     QQuickView* qView = SailfishApp::createView();
 
     qView->setSource(SailfishApp::pathTo("qml/FirstTry.qml"));
     qView->rootContext()->setContextProperty("qmlHandler", qh);
-    qview->rootContext()->setContextProperty("SQLtoQML", sqltoqml.data());
+    qview->rootContext()->setContextProperty("SQLtoQML", sqltoqml);
 
     qView->show();
 
