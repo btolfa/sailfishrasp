@@ -30,6 +30,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../views"
 
 Page {
     id: page
@@ -79,58 +80,16 @@ Page {
 
             // ОТКУДА
 
-            Row {
-                spacing: Theme.paddingSmall
-                width: parent.width
-
-                SearchField {
-                    id: searchFrom
-                    placeholderText: qsTr("Откуда")
-                    anchors.verticalCenter: parent.verticalCenter
-                    width: parent.width - locateFrom.width - Theme.horizontalPageMargin - parent.spacing
-                    EnterKey.enabled: text.length > 0
-                    EnterKey.iconSource: "image://theme/icon-m-enter-next"
-                    EnterKey.onClicked: textArea.focus = true
-                    //            validator: DoubleValidator {
-                    //                bottom: -1
-                    //                top: 10
-                    //                decimals: 2
-                    //            }
-                    //            inputMethodHints: Qt.ImhFormattedNumbersOnly
-                }
-
-                IconButton{
-                    id: locateFrom
-                    anchors.verticalCenter: parent.verticalCenter
-                    onClicked: whereFrom()
-                    icon.source:
-                        "image://theme/icon-m-whereami"
-                }
+            SearchBox {
+                id: searchFrom
+                placeHolderText: qsTr("Откуда")
             }
 
             // КУДА
 
-            Row {
-                spacing: Theme.paddingSmall
-                width: parent.width
-
-                SearchField {
-                    id: searchTo
-                    placeholderText: qsTr("Куда")
-                    anchors.verticalCenter: parent.verticalCenter
-                    width: parent.width - locateFrom.width - Theme.horizontalPageMargin - parent.spacing
-                    EnterKey.enabled: text.length > 0
-                    EnterKey.iconSource: "image://theme/icon-m-enter-next"
-                    EnterKey.onClicked: textArea.focus = true
-                }
-
-                IconButton{
-                    id: locateTo
-                    anchors.verticalCenter: parent.verticalCenter
-                    onClicked: whereTo()
-                    icon.source:
-                        "image://theme/icon-m-whereami"
-                }
+            SearchBox {
+                id: searchTo
+                placeHolderText: qsTr("Куда")
             }
 
 // ДАТА
