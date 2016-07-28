@@ -27,7 +27,9 @@ SOURCES += src/FirstTry.cpp \
 OTHER_FILES += qml/FirstTry.qml \
     qml/cover/CoverPage.qml \
     qml/pages/FirstPage.qml \
-    qml/pages/SecondPage.qml \
+    qml/pages/ThreadsPage.qml \
+    qml/pages/ZonePage.qml \
+    qml/pages/Util.js \
     rpm/FirstTry.changes.in \
     rpm/FirstTry.spec \
     rpm/FirstTry.yaml \
@@ -53,6 +55,7 @@ HEADERS += \
     src/sqltoqml.h
 
 DISTFILES += \
-    qml/views/SearchBox.qml
+    qml/views/SearchBox.qml \
+    qml/pages/ThreadsPage.qml
 
 QT+= sql positioning

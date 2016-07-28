@@ -19,10 +19,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Сменить регион</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Откуда</source>
         <translation type="unfinished"></translation>
     </message>
@@ -30,16 +26,31 @@
         <source>Куда</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Сменить пригородную зону</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
-    <name>SecondPage</name>
+    <name>ThreadsPage</name>
     <message>
         <source>Nested Page</source>
-        <translation>Unterseite</translation>
+        <translation type="unfinished">Unterseite</translation>
     </message>
     <message>
         <source>Item</source>
-        <translation>Element</translation>
+        <translation type="unfinished">Element</translation>
+    </message>
+</context>
+<context>
+    <name>ZonePage</name>
+    <message>
+        <source>Nested Page</source>
+        <translation type="unfinished">Unterseite</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation type="unfinished">Element</translation>
     </message>
 </context>
 </TS>
