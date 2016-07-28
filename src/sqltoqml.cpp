@@ -10,13 +10,16 @@ QList<QObject*> SQLtoQML::getHints()
 {
     loaddb();
     QSqlQuery query;
-    QSqlRecord rec = query.record();
-    query.exec("SELECT * from zone");
-    while (query.next()) {
-           int geo = query.value(rec.indexOf("id")).toInt();
+    if (!query.exec("SELECT * from zone LIMIT 1;")) {
+        qDebug() << "SQL query error: " << query.lastError().text();
+    }
 
-            qDebug() << "number is " << geo;
-        }
+    QSqlRecord rec = query.record();
+
+    while (query.next()) {
+        int geo = query.value(rec.indexOf("id")).toInt();
+        qDebug() << "number is " << geo;
+    }
    // qDebug() << query.lastError();
 }
 
