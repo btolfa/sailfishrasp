@@ -6,6 +6,11 @@ SQLtoQML::SQLtoQML()
 
 }
 
+QList<QObject*> SQLtoQML::getHints()
+{
+
+}
+
 void SQLtoQML::loaddb()
 {
     QSqlDatabase sdb = QSqlDatabase::addDatabase("QSQLITE");
@@ -14,4 +19,3 @@ void SQLtoQML::loaddb()
           qDebug() << sdb.lastError().text();
     }
 }
-

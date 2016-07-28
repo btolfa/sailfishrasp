@@ -3,17 +3,19 @@
 
 #include <QObject>
 #include <QtSql/QtSql>
+#include "searchhint.h"
 
 class SQLtoQML
 {
 public:
     SQLtoQML();
-
+    QList<QObject*> getHints();
 signals:
 
-private slots:
+private:
     void loaddb();
 public slots:
+
 };
 
 #endif // SQLTOQML_H
