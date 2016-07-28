@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.1">
 <context>
     <name>CoverPage</name>
     <message>
@@ -11,15 +11,23 @@
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Show Page 2</source>
+        <source>Расписание электричек</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>UI Template</source>
+        <source>Откуда</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hello Sailors</source>
+        <source>Москва и область</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Сменить регион</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Куда</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -35,4 +43,3 @@
     </message>
 </context>
 </TS>
-

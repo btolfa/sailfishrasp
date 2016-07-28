@@ -42,30 +42,141 @@ Page {
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
             MenuItem {
-                text: qsTr("Show Page 2")
-                onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
+                text: qsTr("Сменить регион")
+                //                    onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
             }
         }
 
         // Tell SilicaFlickable the height of its content.
         contentHeight: column.height
 
+
         // Place our content in a Column.  The PageHeader is always placed at the top
         // of the page, followed by our content.
+
         Column {
             id: column
 
-            width: page.width
-            spacing: Theme.paddingLarge
+            anchors.fill: parent
+            spacing: Theme.paddingMedium
+
+
             PageHeader {
-                title: qsTr("UI Template")
+                title: qsTr("Расписание электричек")
+                id: pageHeader
             }
-            Label {
-                x: Theme.paddingLarge
-                text: qsTr("Hello Sailors")
-                color: Theme.secondaryHighlightColor
-                font.pixelSize: Theme.fontSizeExtraLarge
+            //            Label {
+            //                x: Theme.paddingLarge
+            //                text: qsTr("Hello Sailors")
+            //                color: Theme.secondaryHighlightColor
+            //                font.pixelSize: Theme.fontSizeExtraLarge
+            //            }
+
+            SectionHeader {
+                id: cityName
+                text: qsTr("Москва и область")
             }
+
+
+            // ОТКУДА
+
+            Row {
+                spacing: Theme.paddingSmall
+                width: parent.width
+
+                SearchField {
+                    id: searchFrom
+                    placeholderText: qsTr("Откуда")
+                    anchors.verticalCenter: parent.verticalCenter
+                    width: parent.width - locateFrom.width - Theme.horizontalPageMargin - parent.spacing
+                    EnterKey.enabled: text.length > 0
+                    EnterKey.iconSource: "image://theme/icon-m-enter-next"
+                    EnterKey.onClicked: textArea.focus = true
+                    //            validator: DoubleValidator {
+                    //                bottom: -1
+                    //                top: 10
+                    //                decimals: 2
+                    //            }
+                    //            inputMethodHints: Qt.ImhFormattedNumbersOnly
+                }
+
+                IconButton{
+                    id: locateFrom
+                    anchors.verticalCenter: parent.verticalCenter
+                    onClicked: whereFrom()
+                    icon.source:
+                        "image://theme/icon-m-whereami"
+                }
+            }
+
+            // КУДА
+
+            Row {
+                spacing: Theme.paddingSmall
+                width: parent.width
+
+                SearchField {
+                    id: searchTo
+                    placeholderText: qsTr("Куда")
+                    anchors.verticalCenter: parent.verticalCenter
+                    width: parent.width - locateFrom.width - Theme.horizontalPageMargin - parent.spacing
+                    EnterKey.enabled: text.length > 0
+                    EnterKey.iconSource: "image://theme/icon-m-enter-next"
+                    EnterKey.onClicked: textArea.focus = true
+                }
+
+                IconButton{
+                    id: locateTo
+                    anchors.verticalCenter: parent.verticalCenter
+                    onClicked: whereTo()
+                    icon.source:
+                        "image://theme/icon-m-whereami"
+                }
+            }
+
+// ДАТА
+
+            Button {
+                id: button
+                text: "Выберите дату"
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    var dialog = pageStack.push(pickerComponent, {
+                                                    date: new Date('2016/07/28')
+                                                })
+                    dialog.accepted.connect(function() {
+                        button.text = "Поезда на " + dialog.dateText
+                    })
+                }
+
+                Component {
+                    id: pickerComponent
+                    DatePickerDialog {}
+                }
+            }
+
+
+
+
+
+            //                //                TextField {
+            //                //                    label: "Откуда"
+            //                //                    placeholderText: label
+            //                //                }
+            //                TextField {
+            //                    placeholderText: qsTr("Станция отправления")
+            //                    label: qsTr("Откуда")
+            //                    //                    width: parent.width - IconButton.width
+            //                    //                    EnterKey.enabled: text.length > 0
+            //                    //                    EnterKey.iconSource: "image://theme/icon-m-enter-next"
+            //                    //                    EnterKey.onClicked: textArea.focus = true
+            //                }
+            //                //                IconButton{
+            //                //                    onClicked: doAction()
+            //                //                    icon.source:
+            //                //                        "image://theme/icon-m-whereami"
+            //                //                }
+            //        }
         }
     }
 }
