@@ -2,8 +2,10 @@
 #define QMLHANDLER_H
 
 #include <QObject>
-//#include <QListData>
-//#include <QAbstractListModel>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QUrlQuery>
 
 class QmlHandler : public QObject
 {
@@ -11,6 +13,8 @@ class QmlHandler : public QObject
     Q_PROPERTY (QList<QObject*> routeModel READ routeModel WRITE setRouteModel NOTIFY routeModelChanged)
 public:
     explicit QmlHandler(QObject *parent = 0);
+
+    Q_INVOKABLE void getRoute(QString originStation, QString destStation, QDate tripDate);
 
     void setRouteModel(const QList<QObject*> &newRtModel)
     {
@@ -25,6 +29,7 @@ public:
 signals:
     void routeModelChanged();
 public slots:
+    void onGetRouteFinished(QNetworkReply* netReply);
 private:
     QList<QObject*> m_routeModel;
 };
