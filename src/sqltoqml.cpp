@@ -3,12 +3,10 @@
 
 SQLtoQML::SQLtoQML(QObject *parent) : QObject(parent)
 {
-    getHints();
 }
 
 QList<QObject*> SQLtoQML::getHints()
 {
-    loaddb();
     QSqlQuery query;
     if (!query.exec("SELECT * from zone LIMIT 1;")) {
         qDebug() << "SQL query error: " << query.lastError().text();
