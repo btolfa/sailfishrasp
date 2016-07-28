@@ -14,7 +14,15 @@ TARGET = FirstTry
 
 CONFIG += sailfishapp
 
-SOURCES += src/FirstTry.cpp
+db.files = db/
+db.path = /usr/share/$${TARGET}/
+INSTALLS += db
+
+SOURCES += src/FirstTry.cpp \
+    src/qmlhandler.cpp \
+    src/sqltoqml.cpp \
+    src/searchhint.cpp
+    src/sqltoqml.cpp
 
 OTHER_FILES += qml/FirstTry.qml \
     qml/cover/CoverPage.qml \
@@ -38,6 +46,13 @@ CONFIG += sailfishapp_i18n
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/FirstTry-de.ts
 
+HEADERS += \
+    src/qmlhandler.h \
+    src/sqltoqml.h \
+    src/searchhint.h
+    src/sqltoqml.h
+
 DISTFILES += \
     qml/views/SearchBox.qml
 
+QT+=  sql

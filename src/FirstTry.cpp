@@ -32,8 +32,11 @@
 #include <QtQuick>
 #endif
 
+#include "qmlhandler.h"
 #include <sailfishapp.h>
-
+#include <QQuickView>
+#include <QGuiApplication>
+#include <QQmlContext>
 
 int main(int argc, char *argv[])
 {
@@ -46,6 +49,17 @@ int main(int argc, char *argv[])
     //
     // To display the view, call "show()" (will show fullscreen on device).
 
-    return SailfishApp::main(argc, argv);
+    QGuiApplication * sailfishRaspApp = SailfishApp::application(argc, argv);
+
+    QmlHandler* qh = new QmlHandler();
+
+    QQuickView* qView = SailfishApp::createView();
+    qView->setSource(SailfishApp::pathTo("qml/FirstTry.qml"));
+    qView->rootContext()->setContextProperty("qmlHandler",qh);
+    qView->show();
+
+    return sailfishRaspApp->exec();
+
+    //return SailfishApp::main(argc, argv);
 }
 
