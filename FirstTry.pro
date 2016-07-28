@@ -14,6 +14,10 @@ TARGET = FirstTry
 
 CONFIG += sailfishapp
 
+db.files = db/
+db.path = /usr/share/$${TARGET}/
+INSTALLS += db
+
 SOURCES += src/FirstTry.cpp \
     src/qmlhandler.cpp \
     src/sqltoqml.cpp \
