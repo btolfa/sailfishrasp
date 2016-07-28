@@ -129,14 +129,8 @@ Page {
                         verticalCenter: parent.verticalCenter
                     }
                     property var selectedDate: {return null}
-                    property var monthNames: {return ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                                                      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-                                              ];}
                     property var formatDate: {
                         function(date) {
-//                            return "Поезда на " + date.getDate() + " " +
-//                                    dateLabel.monthNames[date.getMonth()] + " " +
-//                                    date.getFullYear();
                             return Util.formatDateWeekday(date)
                         }
                     }
