@@ -61,6 +61,12 @@ Page {
             anchors.fill: parent
             spacing: Theme.paddingMedium
 
+            /*Button {
+                text: "Test"
+                onClicked: {
+                    qmlHandler.getRoute("182209", "181704", new Date(2016,07,29));
+                }
+            }*/
 
             PageHeader {
                 title: qsTr("Расписание электричек")
