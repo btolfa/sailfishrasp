@@ -36,6 +36,8 @@
 #include <QQuickView>
 #include <QGuiApplication>
 #include <QQmlContext>
+#include <QScopedPointer>
+
 #include "qmlhandler.h"
 #include "sqltoqml.h"
 
@@ -50,15 +52,15 @@ int main(int argc, char *argv[])
     //
     // To display the view, call "show()" (will show fullscreen on device).
 
-    QGuiApplication * sailfishRaspApp = SailfishApp::application(argc, argv);
+    QScopedPointer<QGuiApplication> sailfishRaspApp(SailfishApp::application(argc, argv));
 
-    QmlHandler* qh = new QmlHandler();
-    SQLtoQML* sqltoqml = new SQLtoSQL();
-    QQuickView* qView = SailfishApp::createView();
+    QScopedPointer<QmlHandler> qh(new QmlHandler());
+    QScopedPointer<SQLtoQML> sqltoqml(new SQLtoQML());
+    QScopedPointer<QQuickView> qView(SailfishApp::createView());
 
     qView->setSource(SailfishApp::pathTo("qml/FirstTry.qml"));
-    qView->rootContext()->setContextProperty("qmlHandler", qh);
-    qview->rootContext()->setContextProperty("SQLtoQML", sqltoqml);
+    qView->rootContext()->setContextProperty("qmlHandler", qh.data());
+    qView->rootContext()->setContextProperty("SQLtoQML", sqltoqml.data());
 
     qView->show();
 

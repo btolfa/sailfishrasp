@@ -5,10 +5,11 @@
 #include <QtSql/QtSql>
 #include "searchhint.h"
 
-class SQLtoQML
+class SQLtoQML : public QObject
 {
+    Q_OBJECT
 public:
-    SQLtoQML();
+    explicit SQLtoQML(QObject *parent = 0);
     QList<QObject*> getHints();
 signals:
 

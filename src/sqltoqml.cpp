@@ -1,7 +1,7 @@
 #include "sqltoqml.h"
 #include <QtSql/QtSql>
 
-SQLtoQML::SQLtoQML()
+SQLtoQML::SQLtoQML(QObject *parent) : QObject(parent)
 {
     loaddb();
 }
