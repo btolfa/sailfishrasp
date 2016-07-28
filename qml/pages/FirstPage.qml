@@ -117,7 +117,7 @@ Page {
                                                 })
                     dialog.accepted.connect(function() {
                         dateLabel.selectedDate = dialog.date;
-                        dateLabel.text = dateLabel.formatDate(dialog.date);
+                        dateLabel.text = Util.formatDateWeekday(dialog.date);
                     })
                 }
 
@@ -128,12 +128,7 @@ Page {
                         rightMargin: Theme.paddingMedium
                         verticalCenter: parent.verticalCenter
                     }
-                    property var selectedDate: {return null}
-                    property var formatDate: {
-                        function(date) {
-                            return Util.formatDateWeekday(date)
-                        }
-                    }
+                    property var selectedDate: {return null}           
                     property var areSelectedAndCurrentDateEqual: {
                         function() {
                             var currentDate = new Date();
@@ -151,7 +146,6 @@ Page {
                     color: button.highlighted ? Theme.highlightColor : Theme.primaryColor
                     font.pixelSize: Theme.fontSizeLarge
                 }
-
 
                 Image {
                     id: moreImage
