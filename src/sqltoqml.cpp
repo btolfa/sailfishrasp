@@ -32,3 +32,21 @@ QList<QObject*> SQLtoQML::getHints(QString text, int zone)
 
     return hints;
 }
+
+QList<QObject *> SQLtoQML::getZones()
+{
+    QSqlQuery query;
+
+    query.prepare("select id, settlement_title from zone");
+    query.exec();
+
+    QList<QObject*> zones;
+    while (query.next()) {
+        zones.append(new SearchHint(
+                             query.value("settlement_title").toString()
+                           , query.value("id").toInt()
+                         ));
+    }
+
+    return zones;
+}
