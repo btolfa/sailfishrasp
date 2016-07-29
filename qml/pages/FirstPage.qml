@@ -38,14 +38,10 @@ import org.crypt.rasp 1.0
 Page {
     id: page
     property int zoneId: 1
-<<<<<<< HEAD
-
     onZoneIdChanged: {
         searchFrom.zoneId = zoneId
         searchTo.zoneId = zoneId
     }
-=======
->>>>>>> b7f713041b17bcd4da6793bd99f9b1fed18882cc
 
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
