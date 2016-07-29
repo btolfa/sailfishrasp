@@ -36,9 +36,11 @@
 #include <QQmlContext>
 #include <QSqlDatabase>
 
+
 #include "qmlhandler.h"
 #include "sqltoqml.h"
 #include "PosRequest.h"
+#include "searchhint.h"
 
 
 QSqlDatabase loadDb() {
@@ -71,6 +73,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<QmlHandler>("firsttry", 1, 0, "QmlHandler");
     qmlRegisterType<SQLtoQML>("org.crypt.rasp", 1, 0, "SQLtoQML");
     qmlRegisterType<PosRequest>("org.crypt.rasp", 1, 0, "PosRequest");
+    qmlRegisterType<SearchHint>("org.crypt.rasp", 1, 0, "SearchHint");
 
     QQuickView* qView = SailfishApp::createView();
     qView->setSource(SailfishApp::pathTo("qml/FirstTry.qml"));
