@@ -2,10 +2,10 @@
 #include <QtSql/QtSql>
 #include "sailfishapp.h"
 
-SQLtoQML::SQLtoQML(QObject *parent) : QObject(parent)
+SQLtoQML::SQLtoQML(QObject *parent)
+    : QObject(parent)
 {
     qDebug() << "INIT SQLtoQML";
-    loaddb();
 }
 
 QList<QObject*> SQLtoQML::getHints(QString text, int zone)
@@ -31,17 +31,4 @@ QList<QObject*> SQLtoQML::getHints(QString text, int zone)
     }
 
     return hints;
-}
-
-void SQLtoQML::loaddb()
-{
-   sdb = QSqlDatabase::addDatabase("QSQLITE");
-   QUrl dbPath = SailfishApp::pathTo("db/rasp.sqlite");
-  // qDebug() << SailfishApp::pathTo("db/rasp.sqlite").path();
-   sdb.setDatabaseName(dbPath.path());
-    if (!sdb.open()) {
-          qDebug() << sdb.lastError().text();
-    }else{
-        qDebug() << "sql LOADED";
-    }
 }

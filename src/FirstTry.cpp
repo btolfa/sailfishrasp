@@ -34,8 +34,21 @@
 #include <QQuickView>
 #include <QGuiApplication>
 #include <QQmlContext>
+#include <QSqlDatabase>
+
 #include "qmlhandler.h"
 #include "sqltoqml.h"
+
+
+QSqlDatabase loadDb() {
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(SailfishApp::pathTo("db/rasp.sqlite").path());
+    if (! db.open()) {
+        qDebug() << db.lastError().text();
+    }
+
+    return db;
+}
 
 int main(int argc, char *argv[])
 {
@@ -51,20 +64,18 @@ int main(int argc, char *argv[])
     //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
     //
     // To display the view, call "show()" (will show fullscreen on device).
+
+    QSqlDatabase db = loadDb();
+
     qmlRegisterType<Thread>("firsttry", 1, 0, "Thread");
     qmlRegisterType<QmlHandler>("firsttry", 1, 0, "QmlHandler");
     qmlRegisterType<SQLtoQML>("org.crypt.rasp", 1, 0, "SQLtoQML");
-    //    return SailfishApp::main(argc, argv);
 
-    //    QmlHandler* qh = new QmlHandler();
 
-        QQuickView* qView = SailfishApp::createView();
-        qView->setSource(SailfishApp::pathTo("qml/FirstTry.qml"));
-//        qView->rootContext()->setContextProperty("qmlHandler",qh);
-        qView->show();
+    QQuickView* qView = SailfishApp::createView();
+    qView->setSource(SailfishApp::pathTo("qml/FirstTry.qml"));
+    qView->show();
 
-        return sailfishRaspApp -> exec();
-
-    //return SailfishApp::main(argc, argv);
+    return sailfishRaspApp -> exec();
 }
 
