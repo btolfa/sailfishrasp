@@ -202,7 +202,7 @@ Page {
                 text: qsTr("Поиск")
                 onClicked: {
                     qmlHandler.getRoute("182209","181704",dateLabel.selectedDate);
-                    pageStack.push(Qt.resolvedUrl("ThreadsPage.qml"));
+                    pageStack.push(Qt.resolvedUrl("ThreadsPage.qml"), {qmlHandler: qmlHandler});
                 }
             }
 

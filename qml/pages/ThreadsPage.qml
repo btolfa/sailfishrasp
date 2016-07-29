@@ -33,6 +33,8 @@ import Sailfish.Silica 1.0
 import firsttry 1.0
 
 Page {
+    property QmlHandler qmlHandler;
+
     id: page
 //    SilicaListView {
     ListView {
@@ -55,8 +57,14 @@ Page {
 //                color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
                 text: thread.get("arrival").substring(11,16)
             }
-            onClicked: console.log("Clicked " + index)
+
+            onClicked: {
+                qmlHandler.getTrainInfo(thread.get("thread").uid, new Date(thread.get("departure")));
+                pageStack.push(Qt.resolvedUrl("ThreadInfo.qml"), {qmlHandler: qmlHandler});
+                //console.log("Clicked " + index)
+            }
         }
+
         VerticalScrollDecorator {}
     }
 }

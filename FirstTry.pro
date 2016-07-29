@@ -58,6 +58,7 @@ HEADERS += \
 
 DISTFILES += \
     qml/views/SearchBox.qml \
-    qml/pages/ThreadsPage.qml
+    qml/pages/ThreadsPage.qml \
+    qml/pages/ThreadInfo.qml
 
 QT+= sql positioning
