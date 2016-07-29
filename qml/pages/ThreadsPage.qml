@@ -43,25 +43,20 @@ Page {
             title: qsTr("Nested Page")
         }
         delegate: ListItem {
-//            id: delegate
+            id: delegate
             property Thread thread: qmlHandler.routeModel[model.index]
 
             Label {
-                anchors.verticalCenter: parent.verticalCenter
-                width: parent.width - Theme.horizontalPageMargin * 2
+//                anchors.verticalCenter: parent.verticalCenter
+//                width: parent.width - Theme.paddingLarge * 2
 //                x: Theme.paddingLarge
 //                text: qsTr("Item") + " " + index
 //                anchors.verticalCenter: parent.verticalCenter
 //                color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
                 text: thread.get("arrival").substring(11,16)
             }
-//            onClicked: console.log("Clicked " + index)
+            onClicked: console.log("Clicked " + index)
         }
         VerticalScrollDecorator {}
     }
 }
-
-
-
-
-
