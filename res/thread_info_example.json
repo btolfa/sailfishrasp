@@ -1,0 +1,652 @@
+{
+   "except_days":"",
+   "uid":"6326_0_9601458_g16_4",
+   "title":"Бородино — Москва (Белорусский вокзал)",
+   "start_time":"22:34",
+   "number":"6326",
+   "short_title":"Бородино — М-Белорусск.",
+   "days":"ежедневно",
+   "carrier":{
+      "code":153,
+      "codes":{
+         "icao":null,
+         "sirena":null,
+         "iata":null
+      },
+      "title":"Центральная пригородная пассажирская компания"
+   },
+   "transport_type":"suburban",
+   "stops":[
+      {
+         "arrival":null,
+         "departure":"2016-07-29 22:34:00",
+         "terminal":null,
+         "platform":"1 платф.",
+         "station":{
+            "code":"s9601458",
+            "station_type":"станция",
+            "title":"Бородино",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":null,
+         "duration":0.0
+      },
+      {
+         "arrival":"2016-07-29 22:45:00",
+         "departure":"2016-07-29 22:46:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601006",
+            "station_type":"вокзал",
+            "title":"Можайск",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":720.0
+      },
+      {
+         "arrival":"2016-07-29 22:48:00",
+         "departure":"2016-07-29 22:49:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601664",
+            "station_type":"платформа",
+            "title":"109 км",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":900.0
+      },
+      {
+         "arrival":"2016-07-29 22:52:00",
+         "departure":"2016-07-29 22:53:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601890",
+            "station_type":"платформа",
+            "title":"Кукаринская",
+            "popular_title":"",
+            "short_title":null,
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":1140.0
+      },
+      {
+         "arrival":"2016-07-29 22:57:00",
+         "departure":"2016-07-29 22:58:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601773",
+            "station_type":"платформа",
+            "title":"Шаликово",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":1440.0
+      },
+      {
+         "arrival":"2016-07-29 23:02:00",
+         "departure":"2016-07-29 23:03:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601799",
+            "station_type":"платформа",
+            "title":"Партизанская",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":1740.0
+      },
+      {
+         "arrival":"2016-07-29 23:07:00",
+         "departure":"2016-07-29 23:08:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601629",
+            "station_type":"станция",
+            "title":"Дорохово",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":2040.0
+      },
+      {
+         "arrival":"2016-07-29 23:09:00",
+         "departure":"2016-07-29 23:10:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601840",
+            "station_type":"платформа",
+            "title":"Садовая",
+            "popular_title":"",
+            "short_title":null,
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":2160.0
+      },
+      {
+         "arrival":"2016-07-29 23:13:00",
+         "departure":"2016-07-29 23:14:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601754",
+            "station_type":"платформа",
+            "title":"Театральная",
+            "popular_title":"",
+            "short_title":null,
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":2400.0
+      },
+      {
+         "arrival":"2016-07-29 23:16:00",
+         "departure":"2016-07-29 23:18:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9602011",
+            "station_type":"вокзал",
+            "title":"Тучково",
+            "popular_title":"",
+            "short_title":null,
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":120,
+         "duration":2640.0
+      },
+      {
+         "arrival":"2016-07-29 23:21:00",
+         "departure":"2016-07-29 23:22:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601864",
+            "station_type":"платформа",
+            "title":"Санаторная",
+            "popular_title":"",
+            "short_title":null,
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":2880.0
+      },
+      {
+         "arrival":"2016-07-29 23:24:00",
+         "departure":"2016-07-29 23:25:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601718",
+            "station_type":"платформа",
+            "title":"Полушкино",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":3060.0
+      },
+      {
+         "arrival":"2016-07-29 23:28:00",
+         "departure":"2016-07-29 23:29:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601733",
+            "station_type":"платформа",
+            "title":"Чапаевка",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":3300.0
+      },
+      {
+         "arrival":"2016-07-29 23:32:00",
+         "departure":"2016-07-29 23:33:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9600748",
+            "station_type":"вокзал",
+            "title":"Кубинка 1",
+            "popular_title":"",
+            "short_title":null,
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":3540.0
+      },
+      {
+         "arrival":"2016-07-29 23:34:00",
+         "departure":"2016-07-29 23:34:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9602459",
+            "station_type":"платформа",
+            "title":"Портновская",
+            "popular_title":"",
+            "short_title":null,
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":0,
+         "duration":3600.0
+      },
+      {
+         "arrival":"2016-07-29 23:35:00",
+         "departure":"2016-07-29 23:35:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601817",
+            "station_type":"платформа",
+            "title":"Часцовская",
+            "popular_title":"",
+            "short_title":null,
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":0,
+         "duration":3660.0
+      },
+      {
+         "arrival":"2016-07-29 23:39:00",
+         "departure":"2016-07-29 23:40:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601717",
+            "station_type":"станция",
+            "title":"Петелино",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":3960.0
+      },
+      {
+         "arrival":"2016-07-29 23:41:00",
+         "departure":"2016-07-29 23:41:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9600777",
+            "station_type":"платформа",
+            "title":"Сушкинская",
+            "popular_title":"",
+            "short_title":null,
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":0,
+         "duration":4020.0
+      },
+      {
+         "arrival":"2016-07-29 23:47:00",
+         "departure":"2016-07-29 23:48:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9602265",
+            "station_type":"станция",
+            "title":"Голицыно",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":4440.0
+      },
+      {
+         "arrival":"2016-07-29 23:49:00",
+         "departure":"2016-07-29 23:49:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601658",
+            "station_type":"платформа",
+            "title":"Малые Вязёмы",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":0,
+         "duration":4500.0
+      },
+      {
+         "arrival":"2016-07-29 23:50:00",
+         "departure":"2016-07-29 23:50:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601725",
+            "station_type":"платформа",
+            "title":"Дачное",
+            "popular_title":"",
+            "short_title":null,
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":0,
+         "duration":4560.0
+      },
+      {
+         "arrival":"2016-07-29 23:54:00",
+         "departure":"2016-07-29 23:55:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601212",
+            "station_type":"платформа",
+            "title":"Жаворонки",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":4860.0
+      },
+      {
+         "arrival":"2016-07-29 23:56:00",
+         "departure":"2016-07-29 23:56:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9602229",
+            "station_type":"платформа",
+            "title":"Здравница",
+            "popular_title":"",
+            "short_title":null,
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":0,
+         "duration":4920.0
+      },
+      {
+         "arrival":"2016-07-29 23:59:00",
+         "departure":"2016-07-30 00:00:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601172",
+            "station_type":"платформа",
+            "title":"Перхушково",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":5160.0
+      },
+      {
+         "arrival":"2016-07-30 00:02:00",
+         "departure":"2016-07-30 00:03:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601641",
+            "station_type":"платформа",
+            "title":"Пионерская",
+            "popular_title":"",
+            "short_title":null,
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":5340.0
+      },
+      {
+         "arrival":"2016-07-30 00:05:00",
+         "departure":"2016-07-30 00:06:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601231",
+            "station_type":"платформа",
+            "title":"Отрадное",
+            "popular_title":"",
+            "short_title":null,
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":5520.0
+      },
+      {
+         "arrival":"2016-07-30 00:08:00",
+         "departure":"2016-07-30 00:09:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9600721",
+            "station_type":"вокзал",
+            "title":"Одинцово",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":5700.0
+      },
+      {
+         "arrival":"2016-07-30 00:10:00",
+         "departure":"2016-07-30 00:10:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601338",
+            "station_type":"платформа",
+            "title":"Баковка",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":0,
+         "duration":5760.0
+      },
+      {
+         "arrival":"2016-07-30 00:12:00",
+         "departure":"2016-07-30 00:13:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9602218",
+            "station_type":"платформа",
+            "title":"Трёхгорка",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":5940.0
+      },
+      {
+         "arrival":"2016-07-30 00:15:00",
+         "departure":"2016-07-30 00:16:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9602258",
+            "station_type":"платформа",
+            "title":"Немчиновка",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":6120.0
+      },
+      {
+         "arrival":"2016-07-30 00:18:00",
+         "departure":"2016-07-30 00:19:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9600941",
+            "station_type":"платформа",
+            "title":"Сетунь",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":6300.0
+      },
+      {
+         "arrival":"2016-07-30 00:21:00",
+         "departure":"2016-07-30 00:22:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9600911",
+            "station_type":"платформа",
+            "title":"Рабочий Посёлок",
+            "popular_title":"",
+            "short_title":"Рабочий Пос.",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":6480.0
+      },
+      {
+         "arrival":"2016-07-30 00:24:00",
+         "departure":"2016-07-30 00:25:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601728",
+            "station_type":"станция",
+            "title":"Кунцево",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":6660.0
+      },
+      {
+         "arrival":"2016-07-30 00:29:00",
+         "departure":"2016-07-30 00:30:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9600821",
+            "station_type":"станция",
+            "title":"Фили",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":6960.0
+      },
+      {
+         "arrival":"2016-07-30 00:31:00",
+         "departure":"2016-07-30 00:32:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601349",
+            "station_type":"платформа",
+            "title":"Тестовская",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":60,
+         "duration":7080.0
+      },
+      {
+         "arrival":"2016-07-30 00:35:00",
+         "departure":"2016-07-30 00:37:00",
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s9601666",
+            "station_type":"платформа",
+            "title":"Беговая",
+            "popular_title":"",
+            "short_title":"",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":120,
+         "duration":7380.0
+      },
+      {
+         "arrival":"2016-07-30 00:42:00",
+         "departure":null,
+         "terminal":null,
+         "platform":"",
+         "station":{
+            "code":"s2000006",
+            "station_type":"вокзал",
+            "title":"Москва (Белорусский вокзал)",
+            "popular_title":"Белорусский вокзал",
+            "short_title":"М-Белорусск.",
+            "transport_type":"train",
+            "type":"station"
+         },
+         "stop_time":null,
+         "duration":7680.0
+      }
+   ],
+   "vehicle":null,
+   "express_type":null
+}
