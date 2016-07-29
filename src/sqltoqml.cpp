@@ -1,5 +1,6 @@
 #include "sqltoqml.h"
 #include <QtSql/QtSql>
+#include "sailfishapp.h"
 
 SQLtoQML::SQLtoQML(QObject *parent) : QObject(parent)
 {
@@ -35,7 +36,9 @@ QList<QObject*> SQLtoQML::getHints(QString text, int zone)
 void SQLtoQML::loaddb()
 {
    sdb = QSqlDatabase::addDatabase("QSQLITE");
-    sdb.setDatabaseName("/usr/share/FirstTry/db/rasp.sqlite");
+   QUrl dbPath = SailfishApp::pathTo("db/rasp.sqlite");
+  // qDebug() << SailfishApp::pathTo("db/rasp.sqlite").path();
+   sdb.setDatabaseName(dbPath.path());
     if (!sdb.open()) {
           qDebug() << sdb.lastError().text();
     }else{
