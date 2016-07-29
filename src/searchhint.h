@@ -11,7 +11,7 @@ class SearchHint : public QObject
 
  public:
      explicit SearchHint(QObject *parent = 0);
-     SearchHint(QString title, int id);
+     SearchHint(QString title, int id, QObject *parent = 0);
 
  public slots:
      QString title() { return _title; }

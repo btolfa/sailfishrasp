@@ -80,7 +80,7 @@ Page {
             }
 
             DetailItem {
-
+                id: currentZone
                 label: qsTr("Регион")
                 value: qsTr("Москва и область")
             }
