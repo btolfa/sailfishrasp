@@ -34,15 +34,19 @@
         <source>Выбрана прошедшая дата</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Регион</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Поиск</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ThreadsPage</name>
     <message>
         <source>Nested Page</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Item</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

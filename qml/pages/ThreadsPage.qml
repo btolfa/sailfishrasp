@@ -34,23 +34,26 @@ import Sailfish.Silica 1.0
 
 Page {
     id: page
-    SilicaListView {
+//    SilicaListView {
+    ListView {
         id: listView
-        model: 20
+        model: qmlHandler.routeModel
         anchors.fill: parent
         header: PageHeader {
             title: qsTr("Nested Page")
         }
-        delegate: BackgroundItem {
-            id: delegate
+        delegate: ListItem {
+//            id: delegate
+            property Thread thread: qmlHandler.routeModel[model.index]
 
             Label {
-                x: Theme.paddingLarge
-                text: qsTr("Item") + " " + index
-                anchors.verticalCenter: parent.verticalCenter
-                color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
+//                x: Theme.paddingLarge
+//                text: qsTr("Item") + " " + index
+//                anchors.verticalCenter: parent.verticalCenter
+//                color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
+                text: thread.get("arrival").code
             }
-            onClicked: console.log("Clicked " + index)
+//            onClicked: console.log("Clicked " + index)
         }
         VerticalScrollDecorator {}
     }
