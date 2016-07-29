@@ -6,32 +6,37 @@
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QUrlQuery>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QQmlListProperty>
+#include "thread.h"
 
 class QmlHandler : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY (QList<QObject*> routeModel READ routeModel WRITE setRouteModel NOTIFY routeModelChanged)
+    Q_PROPERTY (QQmlListProperty<Thread> routeModel READ routeModel NOTIFY routeModelChanged)
 public:
     explicit QmlHandler(QObject *parent = 0);
 
     Q_INVOKABLE void getRoute(QString originStation, QString destStation, QDate tripDate);
 
-    void setRouteModel(const QList<QObject*> &newRtModel)
+    void setRouteModel(const QList<Thread*> newRtModel)
     {
         m_routeModel = newRtModel;
         emit routeModelChanged();
     }
 
-    QList<QObject*> routeModel() const
+    QQmlListProperty<Thread> routeModel()
     {
-        return m_routeModel;
+        return QQmlListProperty<Thread>(this, m_routeModel);
     }
 signals:
     void routeModelChanged();
 public slots:
     void onGetRouteFinished(QNetworkReply* netReply);
 private:
-    QList<QObject*> m_routeModel;
+    QList<Thread*> m_routeModel;
 };
 
 #endif // QMLHANDLER_H

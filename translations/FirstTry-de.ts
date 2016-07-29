@@ -9,31 +9,8 @@
     </message>
 </context>
 <context>
-    <name>FirstPage</name>
+    <name>SecondPage</name>
     <message>
-        <source>Сменить пригородную зону</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Расписание электричек</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Москва и область</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Откуда</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Куда</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Выбрана прошедшая дата</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Регион</source>
         <translation type="unfinished"></translation>
@@ -42,23 +19,12 @@
         <source>Поиск</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>ThreadsPage</name>
-    <message>
         <source>Nested Page</source>
-        <translation type="unfinished">Unterseite</translation>
-    </message>
-</context>
-<context>
-    <name>ZonePage</name>
-    <message>
-        <source>Nested Page</source>
-        <translation type="unfinished">Unterseite</translation>
+        <translation>Unterseite</translation>
     </message>
     <message>
         <source>Item</source>
-        <translation type="unfinished">Element</translation>
+        <translation>Element</translation>
     </message>
 </context>
 </TS>

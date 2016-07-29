@@ -30,6 +30,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import firsttry 1.0
 import "../views"
 import "Util.js" as Util
 
@@ -61,13 +62,6 @@ Page {
 
             anchors.fill: parent
             spacing: Theme.paddingMedium
-
-            /*Button {
-                text: "Test"
-                onClicked: {
-                    qmlHandler.getRoute("182209", "181704", new Date(2016,07,29));
-                }
-            }*/
 
             // ЗАГОЛОВОК
 

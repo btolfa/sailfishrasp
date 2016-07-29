@@ -21,7 +21,8 @@ INSTALLS += db
 SOURCES += src/FirstTry.cpp \
     src/qmlhandler.cpp \
     src/sqltoqml.cpp \
-    src/searchhint.cpp
+    src/searchhint.cpp \
+    src/thread.cpp
     src/sqltoqml.cpp
 
 OTHER_FILES += qml/FirstTry.qml \
@@ -51,7 +52,8 @@ TRANSLATIONS += translations/FirstTry-de.ts
 HEADERS += \
     src/qmlhandler.h \
     src/sqltoqml.h \
-    src/searchhint.h
+    src/searchhint.h \
+    src/thread.h
     src/sqltoqml.h
 
 DISTFILES += \
