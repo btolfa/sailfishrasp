@@ -2,6 +2,7 @@
 #include <QDebug>
 #include <QUrlQuery>
 #include <QJsonArray>
+#include "NearestZoneFinder.h"
 
 PosRequest::PosRequest(QObject *parent)
     : QObject(parent)
@@ -24,7 +25,7 @@ void PosRequest::requestFinished(QNetworkReply *reply)
 void PosRequest::positionUpdated(const QGeoPositionInfo &info)
 {
     source->stopUpdates();
-    getNearestStations(info);
+    NearestZoneFinder::findNearestZone(info.coordinate());
 }
 
 void PosRequest::getNearestStations(const QGeoPositionInfo &info)
@@ -47,6 +48,6 @@ void PosRequest::getNearestStations(const QGeoPositionInfo &info)
 
 void PosRequest::parseResponce(const QJsonDocument& document)
 {
-    QJsonArray stations = document.object()["stations"].toArray();
+
 }
 

@@ -1,17 +1,12 @@
 #ifndef NEARESTZONEFINDER_H
 #define NEARESTZONEFINDER_H
 
-#include <QObject>
+#include <QGeoCoordinate>
 
-class NearestZoneFinder : public QObject
+class NearestZoneFinder
 {
-    Q_OBJECT
 public:
-    explicit NearestZoneFinder(QObject *parent = 0);
-
-signals:
-
-public slots:
+    static void findNearestZone(const QGeoCoordinate& coordinate);
 };
 
 #endif // NEARESTZONEFINDER_H
