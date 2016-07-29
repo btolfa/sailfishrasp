@@ -13,13 +13,17 @@
         <source>Выбрана прошедшая дата</source>
         <translation type="unfinished"></translation>
     </message>
-    <name>ThreadsPage</name>
     <message>
-        <source>Nested Page</source>
+        <source>Регион</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Item</source>
+        <source>Поиск</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <name>ThreadsPage</name>
+    <message>
+        <source>Nested Page</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

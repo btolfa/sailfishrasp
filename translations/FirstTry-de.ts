@@ -11,6 +11,14 @@
 <context>
     <name>SecondPage</name>
     <message>
+    <message>
+        <source>Регион</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Поиск</source>
+        <translation type="unfinished"></translation>
+    </message>
         <source>Nested Page</source>
         <translation>Unterseite</translation>
     </message>
