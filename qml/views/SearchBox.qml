@@ -2,8 +2,6 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Column {
-    property int currentZoneIndex: 1
-
     id: searchColumn
     property alias placeHolderText: searchField.placeholderText
     height: searchRow.height + hints.height
@@ -12,6 +10,7 @@ Column {
     signal changeFocus(bool focusState)
 
     property var stationEsr: null
+    property int zoneId: 1
 
     Row {
         id: searchRow
@@ -45,7 +44,7 @@ Column {
                 stationEsr = null;
 
                 if (text.length > 2) {
-                    var results = sqltoqml.getHints(text, currentZoneIndex);
+                    var results = sqltoqml.getHints(text, zoneId);
                     for (var i in results) {
                         hints.model.append(results[i]);
                         console.log(results[i].esr);

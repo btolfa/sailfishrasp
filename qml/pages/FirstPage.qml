@@ -67,7 +67,6 @@ Page {
             id: sqltoqml
         }
 
-<<<<<<< Updated upstream
         PosRequest {
             id: posRequest
 
@@ -77,11 +76,6 @@ Page {
                 searchTo.currentZoneIndex = posRequest.currentZone.esr
             }
         }
-=======
-        //        PosRequest {
-        //            id: posRequest
-        //        }
->>>>>>> Stashed changes
 
         Column {
             id: column
