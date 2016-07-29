@@ -33,7 +33,7 @@ void NearestZoneFinder::findNearestZone(const QGeoCoordinate &coordinate)
     }
 }
 
-SearchHint NearestZoneFinder::getZoneById(const int zone)
+void NearestZoneFinder::getZoneById(const int zone)
 {
     QSqlQuery query;
 
@@ -42,6 +42,6 @@ SearchHint NearestZoneFinder::getZoneById(const int zone)
     query.exec();
 
     query.next();
-    return SearchHint(query.value("settlement_title").toString(), zone);
+    //return SearchHint(query.value("settlement_title").toString(), zone);
 }
 
