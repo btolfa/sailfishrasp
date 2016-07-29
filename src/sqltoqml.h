@@ -11,7 +11,7 @@ class SQLtoQML : public QObject
 public:
     SQLtoQML(QObject *parent = 0);
     Q_INVOKABLE QList<QObject*> getHints(QString text, int zone);
-    Q_INVOKABLE QList<QObject*> getZones();
+    Q_INVOKABLE QList<QObject*> getZones(QString text);
 
 signals:
 

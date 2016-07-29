@@ -37,6 +37,7 @@ import org.crypt.rasp 1.0
 
 Page {
     id: page
+    property var zoneId
 
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
@@ -50,7 +51,12 @@ Page {
         PullDownMenu {
             MenuItem {
                 text: qsTr("Сменить пригородную зону")
-                onClicked: pageStack.push(Qt.resolvedUrl("ZonePage.qml"))
+                onClicked: { var dialog = pageStack.push(Qt.resolvedUrl("ZonePage.qml"));
+                    dialog.accepted.connect(function(id, text) {
+                        page.zoneId = id;
+                        currentZone.value = text;
+                    })
+                }
             }
         }
 
@@ -96,7 +102,7 @@ Page {
                 id: button
                 width: parent.width
                 height: Theme.itemSizeLarge
-//                anchors.horizontalCenter: parent.horizontalCenter
+                //                anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     var currentDate = new Date();
                     var dateForCalendar = dateLabel.areSelectedAndCurrentDateEqual() === true ?
@@ -170,7 +176,7 @@ Page {
             SectionHeader {
                 id: badDate
                 visible: false
-//                color: "red"
+                //                color: "red"
                 text: qsTr("Выбрана прошедшая дата")
             }
 
@@ -178,6 +184,7 @@ Page {
 
             SearchBox {
                 id: searchFrom
+                zoneId: page.zoneId
                 placeHolderText: qsTr("Откуда")
                 onChangeFocus: {
                     console.log("Got focus signal");
@@ -194,6 +201,7 @@ Page {
 
             SearchBox {
                 id: searchTo
+                zoneId: page.zoneId
                 placeHolderText: qsTr("Куда")
 
                 onChangeFocus: {

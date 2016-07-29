@@ -30,31 +30,51 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import org.crypt.rasp 1.0
 
 
 Page {
-    id: page
+    id: zoneDialog
+    signal accepted(int id, string text)
+
+    //DialogHeader { }
+    property var timeZoneId: {return null}
     SilicaListView {
         id: listView
-        model: 20
-        anchors.fill: parent
-        header: PageHeader {
-            title: qsTr("Nested Page")
+        model: ListModel {}
+        function getZones(text) {
+             return zoneSql.getZones(text);
         }
+
+        anchors.fill: parent
         delegate: BackgroundItem {
             id: delegate
 
             Label {
                 x: Theme.paddingLarge
-                text: qsTr("Item") + " " + index
+                text: title //name
                 anchors.verticalCenter: parent.verticalCenter
                 color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
             }
-            onClicked: console.log("Clicked " + index)
+            onClicked: {
+                zoneDialog.timeZoneId = index;
+                zoneDialog.accepted(index, title);
+                pageStack.pop();
+            }
+        }
+        Component.onCompleted: {
+            var results = getZones("");
+            for (var i in results) {
+                listView.model.append(results[i]);
+            }
+        }
+        SQLtoQML {
+            id: zoneSql
         }
         VerticalScrollDecorator {}
     }
 }
+
 
 
 
