@@ -226,10 +226,10 @@ Page {
                 text: qsTr("Поиск")
                 onClicked: {
                     console.log(searchFrom.stationEsr, searchTo.stationEsr);
-                    if (searchFrom.stationEsr && searchTo.stationEsr) {
+                    //if (searchFrom.stationEsr && searchTo.stationEsr) {
                         qmlHandler.getRoute(searchFrom.stationEsr, searchTo.stationEsr, dateLabel.selectedDate);
                         pageStack.push(Qt.resolvedUrl("ThreadsPage.qml"), {qmlHandler: qmlHandler});
-                    }
+                    //}
                 }
             }
         }
