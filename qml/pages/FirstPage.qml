@@ -199,7 +199,8 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Поиск")
                 onClicked: {
-                    qmlHandler.getRoute("182209","181704",dateLabel.selectedDate);
+                    console.log(searchFrom.stationEsr, searchTo.stationEsr);
+                    qmlHandler.getRoute(searchFrom.stationEsr, searchTo.stationEsr, dateLabel.selectedDate);
                     pageStack.push(Qt.resolvedUrl("ThreadsPage.qml"), {qmlHandler: qmlHandler});
                 }
             }

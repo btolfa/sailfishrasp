@@ -6,6 +6,8 @@ Column {
     height: searchRow.height + hints.height
     width: parent.width
 
+    property var stationEsr: null
+
     Row {
         id: searchRow
         spacing: Theme.paddingSmall
@@ -21,12 +23,14 @@ Column {
             EnterKey.onClicked: textArea.focus = true
 
             onTextChanged: {
-                if (text.length > 2) {
-                    hints.model.clear();
+                hints.model.clear();
+                stationEsr = null;
 
+                if (text.length > 2) {
                     var results = sqltoqml.getHints(text, 1);
                     for (var i in results) {
                         hints.model.append(results[i]);
+                        console.log(results[i].esr);
                     }
                 }
             }
@@ -52,6 +56,7 @@ Column {
             id: listItem
             width: parent.width
             height: Theme.itemSizeExtraSmall
+            property var esrId: esr
 
             Label {
                 id: hintLabel
@@ -64,8 +69,10 @@ Column {
                 truncationMode: TruncationMode.Fade
                 text: title
             }
+
             onClicked: {
                 searchField.text = title;
+                stationEsr = esrId;
                 hints.model.clear();
             }
         }

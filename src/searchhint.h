@@ -5,9 +5,9 @@
 
 class SearchHint : public QObject
 {
-    Q_OBJECT
+     Q_OBJECT
      Q_PROPERTY(QString title READ title)
-     Q_PROPERTY(int id READ id)
+     Q_PROPERTY(int esr READ esr)
 
  public:
      explicit SearchHint(QObject *parent = 0);
@@ -15,7 +15,7 @@ class SearchHint : public QObject
 
  public slots:
      QString title() { return _title; }
-     int id() { return _id; }
+     int esr() { return _id; }
 
  private:
      QString _title;

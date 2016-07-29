@@ -13,7 +13,8 @@ QList<QObject*> SQLtoQML::getHints(QString text, int zone)
     QSqlQuery query;
 
     query.prepare("SELECT title, esr FROM station "
-                  "WHERE zone=:zone AND UPPER(title) LIKE :title "
+                  "WHERE zone=:zone AND (UPPER(title) LIKE :title "
+                  "OR UPPER(popular_title) LIKE :title) "
                   "ORDER BY importance, title LIMIT 5; ");
     query.bindValue(":title", text.toUpper() + "%");
     query.bindValue(":zone", zone);
