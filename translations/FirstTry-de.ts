@@ -11,6 +11,10 @@
 <context>
     <name>FirstPage</name>
     <message>
+        <source>Сменить пригородную зону</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Расписание электричек</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24,10 +28,6 @@
     </message>
     <message>
         <source>Куда</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Сменить пригородную зону</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
