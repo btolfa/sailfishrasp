@@ -173,6 +173,15 @@ Page {
             SearchBox {
                 id: searchFrom
                 placeHolderText: qsTr("Откуда")
+                onChangeFocus: {
+                    console.log("Got focus signal");
+
+                    pageHeader.visible = !focusState;
+                    currentZone.visible = !focusState;
+                    button.visible = !focusState;
+                    // Handle badDate somehow
+                    searchTo.visible = !focusState;
+                }
             }
 
             // КУДА
@@ -180,11 +189,22 @@ Page {
             SearchBox {
                 id: searchTo
                 placeHolderText: qsTr("Куда")
+
+                onChangeFocus: {
+                    console.log("Got focus signal");
+
+                    pageHeader.visible = !focusState;
+                    currentZone.visible = !focusState;
+                    button.visible = !focusState;
+                    // Handle badDate somehow
+                    searchFrom.visible = !focusState;
+                }
             }
 
             // ВРЕМЕННАЯ КНОПКА
 
             Button {
+                //enabled: searchFrom.stationEsr && searchTo.stationEsr
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Поиск")
                 onClicked: {
