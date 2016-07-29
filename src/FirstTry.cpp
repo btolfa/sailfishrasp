@@ -71,7 +71,6 @@ int main(int argc, char *argv[])
     qmlRegisterType<QmlHandler>("firsttry", 1, 0, "QmlHandler");
     qmlRegisterType<SQLtoQML>("org.crypt.rasp", 1, 0, "SQLtoQML");
 
-
     QQuickView* qView = SailfishApp::createView();
     qView->setSource(SailfishApp::pathTo("qml/FirstTry.qml"));
     qView->show();
