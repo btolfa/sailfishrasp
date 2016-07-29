@@ -12,10 +12,6 @@ Column {
     property var stationEsr: null
     property int zoneId: 1
 
-    onZoneIdChanged: {
-        searchField.text = ""
-    }
-
     Row {
         id: searchRow
         spacing: Theme.paddingSmall
