@@ -69,12 +69,20 @@ Page {
                 }
             }*/
 
-// ЗАГОЛОВОК
+            // ЗАГОЛОВОК
 
             PageHeader {
                 title: qsTr("Расписание электричек")
                 id: pageHeader
+
             }
+
+            DetailItem {
+
+                label: qsTr("Регион")
+                value: qsTr("Москва и область")
+            }
+
             //            Label {
             //                x: Theme.paddingLarge
             //                text: qsTr("Hello Sailors")
@@ -82,13 +90,15 @@ Page {
             //                font.pixelSize: Theme.fontSizeExtraLarge
             //            }
 
-            SectionHeader {
-                id: cityName
-                text: qsTr("Москва и область")
-            }
+            //            PageHeader {
+            //                id: cityName
+            //                title: qsTr("Москва и область")
+            //            }
 
 
-// ДАТА
+
+
+            // ДАТА
 
             BackgroundItem {
                 id: button
@@ -106,6 +116,17 @@ Page {
                     dialog.accepted.connect(function() {
                         dateLabel.selectedDate = dialog.date;
                         dateLabel.text = Util.formatDateWeekday(dialog.date);
+                        var isEarlierDate = false;
+                        if (dialog.date.getFullYear() < currentDate.getFullYear) {
+                            isEarlierDate = true;
+                        }
+                        else if (dialog.date.getMonth() < currentDate.getMonth) {
+                            isEarlierDate = true;
+                        }
+                        else if (dialog.date.getDate() < currentDate.getDate()) {
+                            isEarlierDate = true;
+                        }
+                        badDate.visible = isEarlierDate;
                     })
                 }
 
@@ -116,7 +137,7 @@ Page {
                         rightMargin: Theme.paddingMedium
                         verticalCenter: parent.verticalCenter
                     }
-                    property var selectedDate: {return null}           
+                    property var selectedDate: {return null}
                     property var areSelectedAndCurrentDateEqual: {
                         function() {
                             var currentDate = new Date();
@@ -152,15 +173,24 @@ Page {
                 }
             }
 
+            // ПЛОХАЯ ДАТА
 
-// ОТКУДА
+            SectionHeader {
+                id: badDate
+                visible: false
+//                color: "red"
+                text: qsTr("Выбрана прошедшая дата")
+            }
+
+
+            // ОТКУДА
 
             SearchBox {
                 id: searchFrom
                 placeHolderText: qsTr("Откуда")
             }
 
-// КУДА
+            // КУДА
 
             SearchBox {
                 id: searchTo

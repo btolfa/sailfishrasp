@@ -30,6 +30,10 @@
         <source>Куда</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Выбрана прошедшая дата</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ThreadsPage</name>
