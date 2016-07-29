@@ -44,6 +44,7 @@ Column {
                 stationEsr = null;
 
                 if (text.length > 2) {
+                    console.log("zoneId: ", zoneId);
                     var results = sqltoqml.getHints(text, zoneId);
                     for (var i in results) {
                         hints.model.append(results[i]);

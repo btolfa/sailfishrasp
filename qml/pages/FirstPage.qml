@@ -72,8 +72,8 @@ Page {
 
             onCurrentZoneReady: {
                 currentZone.value = posRequest.currentZone.title
-                searchFrom.currentZoneIndex = posRequest.currentZone.esr
-                searchTo.currentZoneIndex = posRequest.currentZone.esr
+                searchFrom.zoneId = posRequest.currentZone.esr
+                searchTo.zoneId = posRequest.currentZone.esr
             }
         }
 

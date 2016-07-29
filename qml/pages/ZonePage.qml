@@ -57,8 +57,7 @@ Page {
                 color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
             }
             onClicked: {
-                zoneDialog.timeZoneId = index;
-                zoneDialog.accepted(index, title);
+                zoneDialog.accepted(esr, title);
                 pageStack.pop();
             }
         }
