@@ -41,14 +41,6 @@ Column {
             //onClicked: whereFrom()
             icon.source:
                 "image://theme/icon-m-whereami"
-
-            onClicked: {
-                hints.model.clear()
-                var i
-                for (i = 0; i <= 4; i++) {
-                    hints.model.append({ hint: "тест" });
-                }
-            }
         }
     }
 
@@ -75,6 +67,7 @@ Column {
                 truncationMode: TruncationMode.Fade
                 text: title
             }
+            onClicked: searchField.text = title
         }
     }
 }
