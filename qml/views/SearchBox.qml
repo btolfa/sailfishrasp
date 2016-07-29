@@ -9,6 +9,8 @@ Column {
     height: searchRow.height + hints.height
     width: parent.width
 
+    signal changeFocus(bool focusState)
+
     property var stationEsr: null
 
     Row {
@@ -21,9 +23,22 @@ Column {
             placeholderText: "PlaceHolder text"
             anchors.verticalCenter: parent.verticalCenter
             width: parent.width - locateFrom.width - Theme.horizontalPageMargin - parent.spacing
-            EnterKey.enabled: text.length > 0
+            EnterKey.enabled: hints.count > 0
             EnterKey.iconSource: "image://theme/icon-m-enter-next"
-            EnterKey.onClicked: textArea.focus = true
+            EnterKey.onClicked: {
+                var item = hints.model.get(0);
+
+                if (item) {
+                    stationEsr = item.esr;
+                    searchField.text = item.title;
+                }
+
+                hints.model.clear();
+
+                focus = false;
+                activeFocus = false;
+                changeFocus(false);
+            }
 
             onTextChanged: {
                 hints.model.clear();
@@ -38,12 +53,20 @@ Column {
                 }
             }
 
-            onFocusChanged: {
-                console.log("Focus changed!");
-                if (!focus) {
+            onActiveFocusChanged: {
+                changeFocus(activeFocus);
+
+                if (!activeFocus) {
+                    var item = hints.model.get(0);
+                    console.log(item);
+                    if (item) {
+                        stationEsr = item.esr;
+                        searchField.text = item.title;
+                    }
+
                     hints.model.clear();
                 } else {
-                    searchField.onTextChanged();
+                    searchField.textChanged();
                 }
             }
         }
