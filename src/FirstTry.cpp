@@ -53,16 +53,15 @@ int main(int argc, char *argv[])
     qmlRegisterType<Thread>("firsttry", 1, 0, "Thread");
     qmlRegisterType<QmlHandler>("firsttry", 1, 0, "QmlHandler");
     //    return SailfishApp::main(argc, argv);
-    return sailfishRaspApp -> exec();
 
     //    QmlHandler* qh = new QmlHandler();
 
-    //    QQuickView* qView = SailfishApp::createView();
-    //    qView->setSource(SailfishApp::pathTo("qml/FirstTry.qml"));
-    //    qView->rootContext()->setContextProperty("qmlHandler",qh);
-    //    qView->show();
+        QQuickView* qView = SailfishApp::createView();
+        qView->setSource(SailfishApp::pathTo("qml/FirstTry.qml"));
+//        qView->rootContext()->setContextProperty("qmlHandler",qh);
+        qView->show();
 
-    //    return sailfishRaspApp->exec();
+        return sailfishRaspApp -> exec();
 
     //return SailfishApp::main(argc, argv);
 }
