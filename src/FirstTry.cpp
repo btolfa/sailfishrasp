@@ -35,6 +35,7 @@
 #include <QGuiApplication>
 #include <QQmlContext>
 #include "qmlhandler.h"
+#include "sqltoqml.h"
 
 int main(int argc, char *argv[])
 {
@@ -52,6 +53,7 @@ int main(int argc, char *argv[])
     // To display the view, call "show()" (will show fullscreen on device).
     qmlRegisterType<Thread>("firsttry", 1, 0, "Thread");
     qmlRegisterType<QmlHandler>("firsttry", 1, 0, "QmlHandler");
+    qmlRegisterType<SQLtoQML>("org.crypt.rasp", 1, 0, "SQLtoQML");
     //    return SailfishApp::main(argc, argv);
 
     //    QmlHandler* qh = new QmlHandler();

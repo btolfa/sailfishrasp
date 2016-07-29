@@ -33,6 +33,7 @@ import Sailfish.Silica 1.0
 import firsttry 1.0
 import "../views"
 import "Util.js" as Util
+import org.crypt.rasp 1.0
 
 Page {
     id: page
@@ -56,6 +57,10 @@ Page {
 
         // Place our content in a Column.  The PageHeader is always placed at the top
         // of the page, followed by our content.
+
+        SQLtoQML {
+            id: sqltoqml
+        }
 
         Column {
             id: column

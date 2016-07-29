@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-class SearchHint : QObject
+class SearchHint : public QObject
 {
     Q_OBJECT
      Q_PROPERTY(QString title READ title)

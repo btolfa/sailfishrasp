@@ -22,9 +22,15 @@ Column {
 
             onTextChanged: {
                 if (text.length > 2) {
-                    console.log(SQLtoQML);
-                    results = SQLtoQML.getHints(text, 1);
-                    console.log(results);
+                    hints.model.clear();
+
+                    var results = sqltoqml.getHints(text, 1);
+                    for (var i in results) {
+                        console.log(results[i]);
+                        console.log(results[i].id);
+                        console.log(results[i].title);
+                        hints.model.append(results[i]);
+                    }
                 }
             }
         }
@@ -67,7 +73,7 @@ Column {
                 color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
                 verticalAlignment: Text.AlignVCenter
                 truncationMode: TruncationMode.Fade
-                text: hint
+                text: title
             }
         }
     }
