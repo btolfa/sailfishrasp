@@ -41,6 +41,10 @@ Page {
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
         anchors.fill: parent
+        VerticalScrollDecorator {}
+
+        // Tell SilicaFlickable the height of its content.
+        contentHeight: column.height
 
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
@@ -49,9 +53,6 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("ZonePage.qml"))
             }
         }
-
-        // Tell SilicaFlickable the height of its content.
-        contentHeight: column.height
 
         // Place our content in a Column.  The PageHeader is always placed at the top
         // of the page, followed by our content.
@@ -192,9 +193,6 @@ Page {
                     pageStack.push(Qt.resolvedUrl("ThreadsPage.qml"), {qmlHandler: qmlHandler});
                 }
             }
-
         }
     }
 }
-
-

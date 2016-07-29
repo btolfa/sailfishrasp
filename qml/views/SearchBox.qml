@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Column {
+    id: searchColumn
     property alias placeHolderText: searchField.placeholderText
     height: searchRow.height + hints.height
     width: parent.width
@@ -34,6 +35,15 @@ Column {
                     }
                 }
             }
+
+            onFocusChanged: {
+                console.log("Focus changed!");
+                if (!focus) {
+                    hints.model.clear();
+                } else {
+                    searchField.onTextChanged();
+                }
+            }
         }
 
         IconButton{
@@ -48,7 +58,7 @@ Column {
     SilicaListView {
         id: hints
         width: parent.width
-        height: contentHeight
+        height: count ? contentHeight : 0
 
         model: ListModel {}
 
