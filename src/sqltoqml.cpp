@@ -3,8 +3,8 @@
 
 SQLtoQML::SQLtoQML(QObject *parent) : QObject(parent)
 {
+    qDebug() << "INIT SQLtoQML";
     loaddb();
-    getHints("МОС", 1);
 }
 
 QList<QObject*> SQLtoQML::getHints(QString text, int zone)
