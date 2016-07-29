@@ -14,12 +14,16 @@
 class PosRequest : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY (SearchHint* currentZone READ currentZone NOTIFY currentZoneReady)
+    Q_PROPERTY (SearchHint* currentZone WRITE setCurrentZone READ currentZone NOTIFY currentZoneReady)
 public:
     explicit PosRequest(QObject *parent = 0);
 
     SearchHint* currentZone() {
         return _currentZone;
+    }
+
+    void setCurrentZone(SearchHint* zone) {
+        _currentZone = zone;
     }
 
 signals:
