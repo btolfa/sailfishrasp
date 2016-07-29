@@ -71,13 +71,13 @@ Column {
             }
         }
 
-        IconButton{
-            id: locateFrom
-            anchors.verticalCenter: parent.verticalCenter
-            //onClicked: whereFrom()
-            icon.source:
-                "image://theme/icon-m-whereami"
-        }
+//        IconButton{
+//            id: locateFrom
+//            anchors.verticalCenter: parent.verticalCenter
+//            //onClicked: whereFrom()
+//            icon.source:
+//                "image://theme/icon-m-whereami"
+//        }
     }
 
     SilicaListView {
