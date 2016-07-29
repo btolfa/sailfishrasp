@@ -34,11 +34,18 @@ QList<QObject*> SQLtoQML::getHints(QString text, int zone)
     return hints;
 }
 
-QList<QObject *> SQLtoQML::getZones()
+QList<QObject *> SQLtoQML::getZones(QString text)
 {
     QSqlQuery query;
 
-    query.prepare("select id, settlement_title from zone");
+    if (text.isEmpty() || text.isNull()) {
+        query.prepare("select id, settlement_title from zone");
+    }
+    else {
+        query.prepare("select id, settlement_title from zone "
+                      "where settlement_title LIKE :settlement_title");
+        query.bindValue(":settlement_title", text.toUpper() + "%");
+    }
     query.exec();
 
     QList<QObject*> zones;
