@@ -53,7 +53,6 @@ Page {
         // Tell SilicaFlickable the height of its content.
         contentHeight: column.height
 
-
         // Place our content in a Column.  The PageHeader is always placed at the top
         // of the page, followed by our content.
 
@@ -76,7 +75,6 @@ Page {
             PageHeader {
                 title: qsTr("Расписание электричек")
                 id: pageHeader
-
             }
 
             DetailItem {
@@ -97,16 +95,13 @@ Page {
             //                title: qsTr("Москва и область")
             //            }
 
-
-
-
             // ДАТА
 
             BackgroundItem {
                 id: button
                 width: parent.width
-                height: Screen.sizeCategory > Screen.Medium ? Theme.itemSizeMedium : Theme.itemSizeExtraSmall
-                anchors.horizontalCenter: parent.horizontalCenter
+                height: Theme.itemSizeLarge
+//                anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     var currentDate = new Date();
                     var dateForCalendar = dateLabel.areSelectedAndCurrentDateEqual() === true ?
@@ -162,7 +157,7 @@ Page {
                     id: moreImage
                     anchors {
                         right: parent.right
-                        rightMargin: Screen.sizeCategory > Screen.Medium ? Theme.horizontalPageMargin : Theme.paddingMedium
+                        rightMargin: Theme.horizontalPageMargin + Theme.paddingSmall
                         verticalCenter: parent.verticalCenter
                     }
                     source: "image://theme/icon-m-right?" + (button.highlighted ? Theme.highlightColor
@@ -183,7 +178,6 @@ Page {
 //                color: "red"
                 text: qsTr("Выбрана прошедшая дата")
             }
-
 
             // ОТКУДА
 
@@ -209,10 +203,6 @@ Page {
                     pageStack.push(Qt.resolvedUrl("ThreadsPage.qml"), {qmlHandler: qmlHandler});
                 }
             }
-
-
-
-
 
             //                //                TextField {
             //                //                    label: "Откуда"

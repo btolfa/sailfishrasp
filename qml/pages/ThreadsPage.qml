@@ -2,9 +2,9 @@
   Copyright (C) 2013 Jolla Ltd.
   Contact: Thomas Perl <thomas.perl@jollamobile.com>
   All rights reserved.
-
+  
   You may use this file under the terms of BSD license as follows:
-
+  
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions are met:
     * Redistributions of source code must retain the above copyright
@@ -15,7 +15,7 @@
     * Neither the name of the Jolla Ltd nor the
       names of its contributors may be used to endorse or promote products
       derived from this software without specific prior written permission.
-
+      
   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -36,7 +36,7 @@ Page {
     property QmlHandler qmlHandler;
 
     id: page
-//    SilicaListView {
+    //    SilicaListView {
     ListView {
         id: listView
         model: qmlHandler.routeModel
@@ -46,6 +46,7 @@ Page {
         }
         delegate: ListItem {
             id: delegate
+<<<<<<< Updated upstream
 
             //property Thread thread: qmlHandler.routeModel[model.index]
 
@@ -59,8 +60,58 @@ Page {
 
                 //text: thread.get("arrival").substring(11,16)
                 text: modelData.arrival + "   " + modelData.hasAlreadyLeft
+=======
+            property Thread thread: qmlHandler.routeModel[model.index]
+            contentHeight: Theme.itemSizeLarge
+            anchors {
+                left: parent.left
+                right: parent.right
+                leftMargin: Theme.horizontalPageMargin
+                rightMargin: Theme.horizontalPageMargin
             }
+            Column {
+                id: leftColumn
+                anchors.left: parent.left
+                Label {
+                    id: departureTime
+                    font.pixelSize: Theme.fontSizeLarge
+                    font.bold: true
+                    text: thread.get("departure").substring(11,16)
+                }
+                Label {
+                    id: arrivalTime
+                    anchors.horizontalCenter: leftColumn.horizontalCenter
+                    font.pixelSize: Theme.fontSizeMedium
+                    text: thread.get("arrival").substring(11,16)
+                }
+            }
+            Label {
+                id: centerLabel
+                anchors {
+                    left: leftColumn.right
+                    right: rightColumn.left
+                    verticalCenter: parent.verticalCenter
+                    leftMargin: Theme.paddingLarge
+                    rightMargin: Theme.paddingLarge
+                }
+                font.pixelSize: Theme.fontSizeSmall
+                wrapMode: Text.WordWrap
+                text: thread.get("thread").title
+>>>>>>> Stashed changes
+            }
+            Column {
+                id: rightColumn
+                anchors.right: parent.right
+                Label {
+                    id: price
+                    text: "123" + " ₽" // Тут знак рубля
+                }
+                Label {
+                    id: duration
+                    text: thread.get("duration") / 60 + " мин."
+                }
 
+            }
             onClicked: {
                 //qmlHandler.getTrainInfo(thread.get("thread").uid, new Date(thread.get("departure")));
                 qmlHandler.getTrainInfo(modelData.thread.uid, new Date(modelData.departure));
@@ -68,7 +119,7 @@ Page {
                 //console.log("Clicked " + index)
             }
         }
-
-        VerticalScrollDecorator {}
+        VerticalScrollDecorator{}
     }
 }
+
