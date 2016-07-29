@@ -3,20 +3,26 @@
 
 SQLtoQML::SQLtoQML(QObject *parent) : QObject(parent)
 {
+    loaddb();
+    getHints("МОС", 1);
 }
 
-QList<QObject*> SQLtoQML::getHints()
+QList<QObject*> SQLtoQML::getHints(QString text, int zone)
 {
     QSqlQuery query;
-    if (!query.exec("SELECT * from zone LIMIT 1;")) {
+
+    query.prepare("SELECT title,esr from station WHERE upper(title) LIKE :title AND zone=:zone ORDER BY importance, title LIMIT 5; ");
+    query.bindValue(":title", text.toUpper() + "%");
+    query.bindValue(":zone", zone);
+    if (!query.exec()) {
         qDebug() << "SQL query error: " << query.lastError().text();
     }
 
     QSqlRecord rec = query.record();
 
     while (query.next()) {
-        int geo = query.value(rec.indexOf("id")).toInt();
-        qDebug() << "number is " << geo;
+        QString geo = query.value(rec.indexOf("title")).toString();
+        qDebug()  << geo;
     }
    // qDebug() << query.lastError();
 }
