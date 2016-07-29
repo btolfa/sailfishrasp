@@ -63,6 +63,12 @@ Page {
 
         PosRequest {
             id: posRequest
+
+            onCurrentZoneReady: {
+                currentZone.value = posRequest.currentZone.title
+                searchFrom.currentZoneIndex = posRequest.currentZone.esr
+                searchTo.currentZoneIndex = posRequest.currentZone.esr
+            }
         }
 
         Column {

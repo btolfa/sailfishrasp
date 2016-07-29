@@ -93,16 +93,18 @@ void QmlHandler::onGetRouteFinished(QNetworkReply *netReply)
         QJsonObject jsonObject = jsonResponse.object();
         QJsonArray jsonArray = jsonObject["threads"].toArray();
 
-        /*for (int i = 0; i < jsonArray.size(); i++)
+        for (int i = 0; i < jsonArray.size(); i++)
         {
             QJsonObject obj = jsonArray.at(i).toObject();
             obj.insert("hasAlreadyLeft",
                        (QDateTime::currentDateTime() >=
                         QDateTime::fromString(obj.value("departure").toString())));
-            qDebug()<<QString(i) + "  " + QDateTime::currentDateTime().toString() + "  " +
+
+            qDebug()<<i + "  " + QDateTime::currentDateTime().toString() + "  " +
                       QDateTime::fromString(obj.value("departure").toString()).toString();
+
             jsonArray.replace(i, obj);
-        }*/
+        }
 
         setRouteModel(jsonArray);
     }

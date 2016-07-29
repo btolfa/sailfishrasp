@@ -14,7 +14,8 @@
 class PosRequest : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY (SearchHint* currentZone WRITE setCurrentZone READ currentZone NOTIFY currentZoneReady)
+    Q_PROPERTY (SearchHint* currentZone READ currentZone NOTIFY currentZoneReady)
+    Q_PROPERTY (SearchHint* currentZoneUser WRITE setCurrentZone READ currentZoneUser NOTIFY currentZoneUserChanged)
 public:
     explicit PosRequest(QObject *parent = 0);
 
@@ -22,12 +23,19 @@ public:
         return _currentZone;
     }
 
+    SearchHint* currentZoneUser() {
+        return _currentZone;
+    }
+
     void setCurrentZone(SearchHint* zone) {
         _currentZone = zone;
+
+        emit currentZoneUserChanged();
     }
 
 signals:
     void currentZoneReady();
+    void currentZoneUserChanged();
 public slots:
     void requestFinished(QNetworkReply *reply);
     void positionUpdated(const QGeoPositionInfo &info);
