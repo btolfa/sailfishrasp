@@ -26,9 +26,6 @@ Column {
 
                     var results = sqltoqml.getHints(text, 1);
                     for (var i in results) {
-                        console.log(results[i]);
-                        console.log(results[i].id);
-                        console.log(results[i].title);
                         hints.model.append(results[i]);
                     }
                 }
@@ -67,7 +64,10 @@ Column {
                 truncationMode: TruncationMode.Fade
                 text: title
             }
-            onClicked: searchField.text = title
+            onClicked: {
+                searchField.text = title;
+                hints.model.clear();
+            }
         }
     }
 }
