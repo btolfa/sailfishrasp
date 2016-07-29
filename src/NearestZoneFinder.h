@@ -7,8 +7,8 @@
 class NearestZoneFinder
 {
 public:
-    static void findNearestZone(const QGeoCoordinate& coordinate);
-    static void getZoneById(const int zone);
+    static SearchHint* findNearestZone(const QGeoCoordinate& coordinate);
+    static SearchHint* getZoneById(const int zone);
 };
 
 #endif // NEARESTZONEFINDER_H

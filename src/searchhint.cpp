@@ -12,4 +12,3 @@ SearchHint::SearchHint(QString title, int id, QObject *parent)
     , _id(id)
 {
 }
-

@@ -25,7 +25,8 @@ void PosRequest::requestFinished(QNetworkReply *reply)
 void PosRequest::positionUpdated(const QGeoPositionInfo &info)
 {
     source->stopUpdates();
-    NearestZoneFinder::findNearestZone(info.coordinate());
+    _currentZone = NearestZoneFinder::findNearestZone(info.coordinate());
+    emit currentZoneReady();
 }
 
 void PosRequest::getNearestStations(const QGeoPositionInfo &info)
