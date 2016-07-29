@@ -46,7 +46,8 @@ Page {
         }
         delegate: ListItem {
             id: delegate
-            property Thread thread: qmlHandler.routeModel[model.index]
+
+            //property Thread thread: qmlHandler.routeModel[model.index]
 
             Label {
 //                anchors.verticalCenter: parent.verticalCenter
@@ -55,11 +56,14 @@ Page {
 //                text: qsTr("Item") + " " + index
 //                anchors.verticalCenter: parent.verticalCenter
 //                color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
-                text: thread.get("arrival").substring(11,16)
+
+                //text: thread.get("arrival").substring(11,16)
+                text: modelData.arrival + "   " + modelData.hasAlreadyLeft
             }
 
             onClicked: {
-                qmlHandler.getTrainInfo(thread.get("thread").uid, new Date(thread.get("departure")));
+                //qmlHandler.getTrainInfo(thread.get("thread").uid, new Date(thread.get("departure")));
+                qmlHandler.getTrainInfo(modelData.thread.uid, new Date(modelData.departure));
                 pageStack.push(Qt.resolvedUrl("ThreadInfo.qml"), {qmlHandler: qmlHandler});
                 //console.log("Clicked " + index)
             }

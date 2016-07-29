@@ -5,7 +5,7 @@ QmlHandler::QmlHandler(QObject *parent) : QObject(parent)
     qDebug()<<"\n-----New qml handler created\n";
 }
 
-void QmlHandler::setRouteModel(const QList<Thread*> newRtModel)
+void QmlHandler::setRouteModel(const QJsonArray newRtModel)
 {
     m_routeModel = newRtModel;
     emit routeModelChanged();
@@ -78,7 +78,8 @@ void QmlHandler::getRoute(QString originStation, QString destStation, QDate trip
 
 void QmlHandler::onGetRouteFinished(QNetworkReply *netReply)
 {
-    QList<Thread*> dataList; //будущая модель
+    //QList<Thread*> dataList; //будущая модель
+    QVariantList dataList;
 
     if (netReply != NULL &&
             netReply->bytesAvailable() > 0 &&
@@ -92,12 +93,18 @@ void QmlHandler::onGetRouteFinished(QNetworkReply *netReply)
         QJsonObject jsonObject = jsonResponse.object();
         QJsonArray jsonArray = jsonObject["threads"].toArray();
 
-        foreach (const QJsonValue & value, jsonArray) {
-            QJsonObject obj = value.toObject();
-            dataList.append(new Thread(obj));
-        }
+        /*for (int i = 0; i < jsonArray.size(); i++)
+        {
+            QJsonObject obj = jsonArray.at(i).toObject();
+            obj.insert("hasAlreadyLeft",
+                       (QDateTime::currentDateTime() >=
+                        QDateTime::fromString(obj.value("departure").toString())));
+            qDebug()<<QString(i) + "  " + QDateTime::currentDateTime().toString() + "  " +
+                      QDateTime::fromString(obj.value("departure").toString()).toString();
+            jsonArray.replace(i, obj);
+        }*/
 
-        setRouteModel(dataList);
+        setRouteModel(jsonArray);
     }
 }
 

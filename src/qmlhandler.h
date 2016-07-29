@@ -10,12 +10,12 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QQmlListProperty>
-#include "thread.h"
 
 class QmlHandler : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY (QQmlListProperty<Thread> routeModel READ routeModel NOTIFY routeModelChanged)
+
+    Q_PROPERTY (QJsonArray routeModel READ routeModel NOTIFY routeModelChanged)
     Q_PROPERTY (QVariant trainInfoModel READ trainInfoModel NOTIFY trainInfoModelChanged)
 public:
     explicit QmlHandler(QObject *parent = 0);
@@ -23,9 +23,10 @@ public:
     Q_INVOKABLE void getRoute(QString originStation, QString destStation, QDate tripDate);
     Q_INVOKABLE void getTrainInfo(QString threadId, QDate tripDate);
 
-    QQmlListProperty<Thread> routeModel()
+    QJsonArray routeModel()
     {
-        return QQmlListProperty<Thread>(this, m_routeModel);
+        return m_routeModel;
+        //return QVariant(this, m_routeModel);
     }
 
     QVariant trainInfoModel()
@@ -39,10 +40,10 @@ public slots:
     void onGetRouteFinished(QNetworkReply* netReply);
     void onGetTrainInfoFinished(QNetworkReply* netReply);
 private:
-    QList<Thread*> m_routeModel;
+    QJsonArray m_routeModel;
     QVariant m_trainInfoModel;
 
-    void setRouteModel(const QList<Thread*> newRtModel);
+    void setRouteModel(const QJsonArray newRtModel);
 };
 
 #endif // QMLHANDLER_H

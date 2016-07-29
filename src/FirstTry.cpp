@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
     //
     // To display the view, call "show()" (will show fullscreen on device).
-    qmlRegisterType<Thread>("firsttry", 1, 0, "Thread");
+
     qmlRegisterType<QmlHandler>("firsttry", 1, 0, "QmlHandler");
     qmlRegisterType<SQLtoQML>("org.crypt.rasp", 1, 0, "SQLtoQML");
     //    return SailfishApp::main(argc, argv);
