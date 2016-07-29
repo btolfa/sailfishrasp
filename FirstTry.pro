@@ -23,7 +23,8 @@ SOURCES += src/FirstTry.cpp \
     src/searchhint.cpp \
     src/thread.cpp \
     src/sqltoqml.cpp \
-    src/PosRequest.cpp
+    src/PosRequest.cpp \
+    src/NearestZoneFinder.cpp
 
 OTHER_FILES += qml/FirstTry.qml \
     qml/cover/CoverPage.qml \
@@ -54,7 +55,8 @@ HEADERS += \
     src/searchhint.h \
     src/thread.h \
     src/sqltoqml.h \
-    src/PosRequest.h
+    src/PosRequest.h \
+    src/NearestZoneFinder.h
 
 DISTFILES += \
     qml/views/SearchBox.qml \
