@@ -25,8 +25,8 @@ QList<QObject*> SQLtoQML::getHints(QString text, int zone)
     QList<QObject*> hints;
 
     while (query.next()) {
-        int esr = query.value(rec.indexOf("esr")).toInt();
-        QString title = query.value(rec.indexOf("title")).toString();
+        int esr = query.value("esr").toInt();
+        QString title = query.value("title").toString();
         hints.append(new SearchHint(title, esr));
     }
 
