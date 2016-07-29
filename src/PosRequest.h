@@ -23,7 +23,7 @@ public slots:
     void positionUpdated(const QGeoPositionInfo &info);
 private:
     void getNearestStations(const QGeoPositionInfo &info);
-    void parseResponce(const QJsonDocument document);
+    void parseResponce(const QJsonDocument& document);
 
     QString apikey;
     QScopedPointer<QGeoPositionInfoSource> source;

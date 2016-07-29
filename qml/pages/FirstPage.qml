@@ -61,6 +61,10 @@ Page {
             id: sqltoqml
         }
 
+        PosRequest {
+            id: posRequest
+        }
+
         Column {
             id: column
 
