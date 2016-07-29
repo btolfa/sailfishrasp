@@ -66,12 +66,8 @@ int main(int argc, char *argv[])
     //
     // To display the view, call "show()" (will show fullscreen on device).
 
-<<<<<<< HEAD
-=======
     QSqlDatabase db = loadDb();
 
-    qmlRegisterType<Thread>("firsttry", 1, 0, "Thread");
->>>>>>> 7cf20fafcbcf2d10de2989e08bcb013559ea4b44
     qmlRegisterType<QmlHandler>("firsttry", 1, 0, "QmlHandler");
     qmlRegisterType<SQLtoQML>("org.crypt.rasp", 1, 0, "SQLtoQML");
     qmlRegisterType<PosRequest>("org.crypt.rasp", 1, 0, "PosRequest");

@@ -20,17 +20,10 @@ INSTALLS += db
 
 SOURCES += src/FirstTry.cpp \
     src/qmlhandler.cpp \
-<<<<<<< HEAD
-    src/sqltoqml.cpp \
-    src/searchhint.cpp
-    src/sqltoqml.cpp
-=======
     src/searchhint.cpp \
-    src/thread.cpp \
     src/sqltoqml.cpp \
     src/PosRequest.cpp \
     src/NearestZoneFinder.cpp
->>>>>>> 7cf20fafcbcf2d10de2989e08bcb013559ea4b44
 
 OTHER_FILES += qml/FirstTry.qml \
     qml/cover/CoverPage.qml \
@@ -58,17 +51,10 @@ TRANSLATIONS += translations/FirstTry-de.ts
 
 HEADERS += \
     src/qmlhandler.h \
-<<<<<<< HEAD
-    src/sqltoqml.h \
-    src/searchhint.h
-    src/sqltoqml.h
-=======
     src/searchhint.h \
-    src/thread.h \
     src/sqltoqml.h \
     src/PosRequest.h \
     src/NearestZoneFinder.h
->>>>>>> 7cf20fafcbcf2d10de2989e08bcb013559ea4b44
 
 DISTFILES += \
     qml/views/SearchBox.qml \
