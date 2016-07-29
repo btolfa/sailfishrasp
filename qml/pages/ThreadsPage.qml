@@ -36,32 +36,28 @@ Page {
     property QmlHandler qmlHandler;
 
     id: page
-    //    SilicaListView {
-    ListView {
+    SilicaListView {
+        //    ListView {
         id: listView
         model: qmlHandler.routeModel
         anchors.fill: parent
         header: PageHeader {
-            title: qsTr("Nested Page")
+            title: qsTr("Маршруты по направлению")
         }
         delegate: ListItem {
             id: delegate
-<<<<<<< Updated upstream
 
-            //property Thread thread: qmlHandler.routeModel[model.index]
+            //            property Thread thread: qmlHandler.routeModel[model.index]
+            //            Label {
+            //                anchors.verticalCenter: parent.verticalCenter
+            //                width: parent.width - Theme.paddingLarge * 2
+            //                x: Theme.paddingLarge
+            //                text: qsTr("Item") + " " + index
+            //                anchors.verticalCenter: parent.verticalCenter
+            //                color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
+            //                text: thread.get("arrival").substring(11,16)
+            //                text: modelData.arrival + "   " + modelData.hasAlreadyLeft;
 
-            Label {
-//                anchors.verticalCenter: parent.verticalCenter
-//                width: parent.width - Theme.paddingLarge * 2
-//                x: Theme.paddingLarge
-//                text: qsTr("Item") + " " + index
-//                anchors.verticalCenter: parent.verticalCenter
-//                color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
-
-                //text: thread.get("arrival").substring(11,16)
-                text: modelData.arrival + "   " + modelData.hasAlreadyLeft
-=======
-            property Thread thread: qmlHandler.routeModel[model.index]
             contentHeight: Theme.itemSizeLarge
             anchors {
                 left: parent.left
@@ -76,13 +72,13 @@ Page {
                     id: departureTime
                     font.pixelSize: Theme.fontSizeLarge
                     font.bold: true
-                    text: thread.get("departure").substring(11,16)
+                    text: modelData.departure.substring(11,16)
                 }
                 Label {
                     id: arrivalTime
                     anchors.horizontalCenter: leftColumn.horizontalCenter
                     font.pixelSize: Theme.fontSizeMedium
-                    text: thread.get("arrival").substring(11,16)
+                    text: modelData.arrival.substring(11,16)
                 }
             }
             Label {
@@ -96,8 +92,8 @@ Page {
                 }
                 font.pixelSize: Theme.fontSizeSmall
                 wrapMode: Text.WordWrap
-                text: thread.get("thread").title
->>>>>>> Stashed changes
+                text: modelData.thread.title
+
             }
             Column {
                 id: rightColumn
@@ -108,7 +104,7 @@ Page {
                 }
                 Label {
                     id: duration
-                    text: thread.get("duration") / 60 + " мин."
+                    text: modelData.duration / 60 + " мин."
                 }
 
             }

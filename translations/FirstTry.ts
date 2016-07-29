@@ -46,7 +46,7 @@
 <context>
     <name>ThreadsPage</name>
     <message>
-        <source>Nested Page</source>
+        <source>Маршруты по направлению</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
