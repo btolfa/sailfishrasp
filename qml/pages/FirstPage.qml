@@ -83,18 +83,6 @@ Page {
                 value: qsTr("Москва и область")
             }
 
-            //            Label {
-            //                x: Theme.paddingLarge
-            //                text: qsTr("Hello Sailors")
-            //                color: Theme.secondaryHighlightColor
-            //                font.pixelSize: Theme.fontSizeExtraLarge
-            //            }
-
-            //            PageHeader {
-            //                id: cityName
-            //                title: qsTr("Москва и область")
-            //            }
-
             // ДАТА
 
             BackgroundItem {
@@ -205,24 +193,6 @@ Page {
                 }
             }
 
-            //                //                TextField {
-            //                //                    label: "Откуда"
-            //                //                    placeholderText: label
-            //                //                }
-            //                TextField {
-            //                    placeholderText: qsTr("Станция отправления")
-            //                    label: qsTr("Откуда")
-            //                    //                    width: parent.width - IconButton.width
-            //                    //                    EnterKey.enabled: text.length > 0
-            //                    //                    EnterKey.iconSource: "image://theme/icon-m-enter-next"
-            //                    //                    EnterKey.onClicked: textArea.focus = true
-            //                }
-            //                //                IconButton{
-            //                //                    onClicked: doAction()
-            //                //                    icon.source:
-            //                //                        "image://theme/icon-m-whereami"
-            //                //                }
-            //        }
         }
     }
 }
