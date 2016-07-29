@@ -39,12 +39,25 @@ void QmlHandler::getRoute(QString originStation, QString destStation, QDate trip
 
 void QmlHandler::onGetRouteFinished(QNetworkReply *netReply)
 {
+    QList<Thread*> dataList; //будущая модель
+
     if (netReply != NULL &&
             netReply->bytesAvailable() > 0 &&
             netReply->error() == QNetworkReply::NoError)
     {
         QString replyStr = netReply->readAll();
-        qDebug()<<replyStr;
+        qDebug()<<"\n"<<replyStr;
+
+        QJsonDocument jsonResponse = QJsonDocument::fromJson(replyStr.toUtf8());
+        QJsonObject jsonObject = jsonResponse.object();
+        QJsonArray jsonArray = jsonObject["threads"].toArray();
+
+        foreach (const QJsonValue & value, jsonArray) {
+            QJsonObject obj = value.toObject();
+            dataList.append(new Thread(obj));
+        }
+
+        setRouteModel(dataList);
     }
 }
 
