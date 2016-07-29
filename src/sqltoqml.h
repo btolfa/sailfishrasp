@@ -9,13 +9,11 @@ class SQLtoQML : public QObject
 {
     Q_OBJECT
 public:
-    explicit SQLtoQML(QObject *parent = 0);
+    SQLtoQML(QObject *parent = 0);
     Q_INVOKABLE QList<QObject*> getHints(QString text, int zone);
+
 signals:
 
-private:
-    void loaddb();
-    QSqlDatabase sdb;
 public slots:
 
 };

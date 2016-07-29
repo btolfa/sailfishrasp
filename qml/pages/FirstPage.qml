@@ -61,6 +61,10 @@ Page {
             id: sqltoqml
         }
 
+        PosRequest {
+            id: posRequest
+        }
+
         Column {
             id: column
 
@@ -76,7 +80,7 @@ Page {
             }
 
             DetailItem {
-
+                id: currentZone
                 label: qsTr("Регион")
                 value: qsTr("Москва и область")
             }
