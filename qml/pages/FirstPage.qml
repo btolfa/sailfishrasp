@@ -46,7 +46,6 @@ Page {
         PullDownMenu {
             MenuItem {
                 text: qsTr("Сменить пригородную зону")
-                //                    onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
                 onClicked: pageStack.push(Qt.resolvedUrl("ZonePage.qml"))
             }
         }

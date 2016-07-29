@@ -47,6 +47,8 @@ Page {
             property Thread thread: qmlHandler.routeModel[model.index]
 
             Label {
+                anchors.verticalCenter: parent.verticalCenter
+                width: parent.width - Theme.horizontalPageMargin * 2
 //                x: Theme.paddingLarge
 //                text: qsTr("Item") + " " + index
 //                anchors.verticalCenter: parent.verticalCenter
