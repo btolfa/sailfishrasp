@@ -7,8 +7,8 @@ conn = sqlite3.connect('rasp.db')
 def create_tables():
     cur = conn.cursor()
     
-    cur.execute('CREATE TABLE station(zone INTEGER, city TEXT, direction TEXT, esr INTEGER, importance INTEGER, lat TEXT, lon TEXT, popular_title TEXT, region TEXT, short_title TEXT, title TEXT)')
-    cur.execute('CREATE TABLE settlement(zone INTEGER, geo_id INTEGER, id INTEGER, latitude TEXT, longitude TEXT, title TEXT)')
+    cur.execute('CREATE TABLE station(zone INTEGER, city TEXT, direction TEXT, esr INTEGER, importance INTEGER, lat REAL, lon REAL, popular_title TEXT, region TEXT, short_title TEXT, title TEXT)')
+    cur.execute('CREATE TABLE settlement(zone INTEGER, geo_id INTEGER, id INTEGER, latitude REAL, longitude REAL, title TEXT)')
     cur.execute('CREATE TABLE zone(code TEXT, id INTEGER, settlement_id INTEGER, settlement_title TEXT, title TEXT)')
     
     conn.commit()
