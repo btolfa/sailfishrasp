@@ -30,7 +30,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-
+import firsttry 1.0
 
 Page {
     id: page
@@ -51,7 +51,7 @@ Page {
 //                text: qsTr("Item") + " " + index
 //                anchors.verticalCenter: parent.verticalCenter
 //                color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
-                text: thread.get("arrival").code
+                text: thread.get("arrival").substring(11,16)
             }
 //            onClicked: console.log("Clicked " + index)
         }

@@ -9,8 +9,13 @@
     </message>
 </context>
 <context>
+    <name>FirstPage</name>
     <message>
-        <source>Выбрана прошедшая дата</source>
+        <source>Сменить пригородную зону</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Расписание электричек</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -18,9 +23,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Москва и область</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Выбрана прошедшая дата</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Откуда</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Куда</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Поиск</source>
         <translation type="unfinished"></translation>
     </message>
+</context>
+<context>
     <name>ThreadsPage</name>
     <message>
         <source>Nested Page</source>

@@ -38,6 +38,10 @@
 
 int main(int argc, char *argv[])
 {
+    QGuiApplication * sailfishRaspApp = SailfishApp::application(argc, argv);
+    sailfishRaspApp -> setApplicationName("TimeToSail");
+    sailfishRaspApp -> setOrganizationName("SixTiredGuys");
+
     // SailfishApp::main() will display "qml/template.qml", if you need more
     // control over initialization, you can use:
     //
@@ -48,18 +52,17 @@ int main(int argc, char *argv[])
     // To display the view, call "show()" (will show fullscreen on device).
     qmlRegisterType<Thread>("firsttry", 1, 0, "Thread");
     qmlRegisterType<QmlHandler>("firsttry", 1, 0, "QmlHandler");
-    return SailfishApp::main(argc, argv);
+    //    return SailfishApp::main(argc, argv);
+    return sailfishRaspApp -> exec();
 
-//    QGuiApplication * sailfishRaspApp = SailfishApp::application(argc, argv);
+    //    QmlHandler* qh = new QmlHandler();
 
-//    QmlHandler* qh = new QmlHandler();
+    //    QQuickView* qView = SailfishApp::createView();
+    //    qView->setSource(SailfishApp::pathTo("qml/FirstTry.qml"));
+    //    qView->rootContext()->setContextProperty("qmlHandler",qh);
+    //    qView->show();
 
-//    QQuickView* qView = SailfishApp::createView();
-//    qView->setSource(SailfishApp::pathTo("qml/FirstTry.qml"));
-//    qView->rootContext()->setContextProperty("qmlHandler",qh);
-//    qView->show();
-
-//    return sailfishRaspApp->exec();
+    //    return sailfishRaspApp->exec();
 
     //return SailfishApp::main(argc, argv);
 }
