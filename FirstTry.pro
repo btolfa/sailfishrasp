@@ -20,10 +20,10 @@ INSTALLS += db
 
 SOURCES += src/FirstTry.cpp \
     src/qmlhandler.cpp \
-    src/sqltoqml.cpp \
     src/searchhint.cpp \
-    src/thread.cpp
-    src/sqltoqml.cpp
+    src/thread.cpp \
+    src/sqltoqml.cpp \
+    src/PosRequest.cpp
 
 OTHER_FILES += qml/FirstTry.qml \
     qml/cover/CoverPage.qml \
@@ -51,10 +51,10 @@ TRANSLATIONS += translations/FirstTry-de.ts
 
 HEADERS += \
     src/qmlhandler.h \
-    src/sqltoqml.h \
     src/searchhint.h \
-    src/thread.h
-    src/sqltoqml.h
+    src/thread.h \
+    src/sqltoqml.h \
+    src/PosRequest.h
 
 DISTFILES += \
     qml/views/SearchBox.qml \
