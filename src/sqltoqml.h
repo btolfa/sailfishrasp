@@ -10,7 +10,7 @@ class SQLtoQML : public QObject
     Q_OBJECT
 public:
     explicit SQLtoQML(QObject *parent = 0);
-    QList<QObject*> getHints(QString text, int zone);
+    Q_INVOKABLE QList<QObject*> getHints(QString text, int zone);
 signals:
 
 private:

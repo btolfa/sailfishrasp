@@ -19,12 +19,14 @@ QList<QObject*> SQLtoQML::getHints(QString text, int zone)
     }
 
     QSqlRecord rec = query.record();
+    QList<SearchHint*> hints;
 
     while (query.next()) {
-        QString geo = query.value(rec.indexOf("title")).toString();
-        qDebug()  << geo;
+        int esr = query.value(rec.indexOf("esr")).toInt();
+        QString title = query.value(rec.indexOf("title")).toString();
+        qDebug()  << title << esr;
+        hints.append(new SearchHint(title, esr));
     }
-   // qDebug() << query.lastError();
 }
 
 void SQLtoQML::loaddb()

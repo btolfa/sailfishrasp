@@ -20,7 +20,13 @@ Column {
             EnterKey.iconSource: "image://theme/icon-m-enter-next"
             EnterKey.onClicked: textArea.focus = true
 
-            onTextChanged: if (text.length > 2) SQLToQML.getHints(text)
+            onTextChanged: {
+                if (text.length > 2) {
+                    console.log(SQLtoQML);
+                    results = SQLtoQML.getHints(text, 1);
+                    console.log(results);
+                }
+            }
         }
 
         IconButton{
