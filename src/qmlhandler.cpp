@@ -110,6 +110,10 @@ void QmlHandler::onGetRouteFinished(QNetworkReply *netReply)
 
         emit threadsListRecieved();
     }
+    else
+    {
+        emit errorRecievingThreads();
+    }
 }
 
 void QmlHandler::onGetTrainInfoFinished(QNetworkReply* netReply)
