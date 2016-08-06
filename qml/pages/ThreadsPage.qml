@@ -40,27 +40,14 @@ Page {
         id: busyIndicator
         size: BusyIndicatorSize.Large
         anchors.centerIn: parent
-        property var ready: {return false}
-        running: !ready
+        running: true
     }
 
     Connections {
         target: qmlHandler
         onThreadsListRecieved: {
-            busyIndicator.ready = true;
-            if (!qmlHandler.routeModel || qmlHandler.routeModel.length <= 0) {
-                noAvailableRoutesMessage.visible = true;
-            }
+            busyIndicator.running = false;
         }
-    }
-
-    Label {
-        id: noAvailableRoutesMessage
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenter: parent.verticalCenter
-        font.pixelSize: Theme.fontSizeMedium
-        visible: false
-        text: "Не нашлось подходящих маршрутов :("
     }
 
     SilicaListView {
@@ -70,6 +57,10 @@ Page {
         anchors.fill: parent
         header: PageHeader {
             title: qsTr("Маршруты по направлению")
+        }
+        ViewPlaceholder {
+            enabled: listView.count == 0 && !busyIndicator.running
+            text: "Не нашлось подходящих маршрутов :("
         }
         delegate: ListItem {
             id: delegate
