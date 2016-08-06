@@ -35,10 +35,17 @@ import subtrains 1.0
 Page {
     property QmlHandler qmlHandler
 
+    BusyIndicator {
+            id: busyIndicator
+            size: BusyIndicatorSize.Large
+            anchors.centerIn: parent
+            property var ready: {return false}
+            running: !ready
+       }
     Connections{
         target: qmlHandler
         onThreadsListRecieved: {
-            listView.scrollToBottom();
+            busyIndicator.ready = true;
         }
     }
 
