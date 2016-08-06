@@ -10,7 +10,7 @@
 #   - translation filenames have to be changed
 
 # The name of your application
-TARGET = FirstTry
+TARGET = harbour-subtrains
 
 CONFIG += sailfishapp
 
@@ -18,24 +18,24 @@ db.files = db/
 db.path = /usr/share/$${TARGET}/
 INSTALLS += db
 
-SOURCES += src/FirstTry.cpp \
+SOURCES += \
     src/qmlhandler.cpp \
     src/searchhint.cpp \
     src/sqltoqml.cpp \
     src/PosRequest.cpp \
-    src/NearestZoneFinder.cpp
+    src/NearestZoneFinder.cpp \
+    src/harbour-subtrains.cpp
 
-OTHER_FILES += qml/FirstTry.qml \
+OTHER_FILES += \
     qml/cover/CoverPage.qml \
     qml/pages/FirstPage.qml \
     qml/pages/ThreadsPage.qml \
     qml/pages/ZonePage.qml \
     qml/pages/Util.js \
-    rpm/FirstTry.changes.in \
-    rpm/FirstTry.spec \
-    rpm/FirstTry.yaml \
-    translations/*.ts \
-    FirstTry.desktop
+    rpm/harbour-subtrains.changes.in \
+    rpm/harbour-subtrains.spec \
+    rpm/harbour-subtrains.yaml \
+    translations/*.ts
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 
@@ -47,7 +47,7 @@ CONFIG += sailfishapp_i18n
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/FirstTry-de.ts
+TRANSLATIONS += translations/harbour-subtrains.ts
 
 HEADERS += \
     src/qmlhandler.h \
@@ -64,6 +64,8 @@ DISTFILES += \
     qml/pages/line-bot.svg \
     qml/pages/line-med.svg \
     qml/pages/line-top.svg \
-    qml/pages/line-grey.svg
+    qml/pages/line-grey.svg \
+    qml/harbour-subtrains.qml \
+    harbour-subtrains.desktop
 
 QT+= sql positioning

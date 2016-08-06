@@ -10,11 +10,11 @@ PosRequest::PosRequest(QObject *parent)
     , source(QGeoPositionInfoSource::createDefaultSource(parent))
     , nam(new QNetworkAccessManager())
 {
-    connect(source.data(), SIGNAL(positionUpdated(QGeoPositionInfo)),
-                        this, SLOT(positionUpdated(QGeoPositionInfo)));
-    source->startUpdates();
+//    connect(source.data(), SIGNAL(positionUpdated(QGeoPositionInfo)),
+//                        this, SLOT(positionUpdated(QGeoPositionInfo)));
+//    source->startUpdates();
 
-    connect(nam.data(), SIGNAL(finished(QNetworkReply*)), this, SLOT(requestFinished(QNetworkReply*)));
+//    connect(nam.data(), SIGNAL(finished(QNetworkReply*)), this, SLOT(requestFinished(QNetworkReply*)));
 }
 
 void PosRequest::requestFinished(QNetworkReply *reply)

@@ -70,13 +70,13 @@ int main(int argc, char *argv[])
 
     QSqlDatabase db = loadDb();
 
-    qmlRegisterType<QmlHandler>("firsttry", 1, 0, "QmlHandler");
+    qmlRegisterType<QmlHandler>("subtrains", 1, 0, "QmlHandler");
     qmlRegisterType<SQLtoQML>("org.crypt.rasp", 1, 0, "SQLtoQML");
     qmlRegisterType<PosRequest>("org.crypt.rasp", 1, 0, "PosRequest");
     qmlRegisterType<SearchHint>("org.crypt.rasp", 1, 0, "SearchHint");
 
     QQuickView* qView = SailfishApp::createView();
-    qView->setSource(SailfishApp::pathTo("qml/FirstTry.qml"));
+    qView->setSource(SailfishApp::pathTo("qml/harbour-subtrains.qml"));
     qView->show();
 
     return sailfishRaspApp -> exec();

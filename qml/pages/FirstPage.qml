@@ -30,7 +30,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import firsttry 1.0
+import subtrains 1.0
 import "../views"
 import "Util.js" as Util
 import org.crypt.rasp 1.0

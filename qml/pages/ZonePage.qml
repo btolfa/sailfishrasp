@@ -36,8 +36,8 @@ import org.crypt.rasp 1.0
 Page {
     id: zoneDialog
     signal accepted(int id, string text)
-    // ЗАГОЛОВОК
 
+    // Заголовок
     PageHeader {
         title: "Регионы"
         id: zonePageHeader
