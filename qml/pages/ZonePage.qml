@@ -36,17 +36,25 @@ import org.crypt.rasp 1.0
 Page {
     id: zoneDialog
     signal accepted(int id, string text)
+    // ЗАГОЛОВОК
 
-    //DialogHeader { }
+    PageHeader {
+        title: "Регионы"
+        id: zonePageHeader
+        height: Theme.itemSizeLarge
+    }
+
     property var timeZoneId: {return null}
     SilicaListView {
         id: listView
         model: ListModel {}
+        anchors.fill: parent
+        anchors.topMargin: Theme.itemSizeLarge
+
         function getZones(text) {
              return zoneSql.getZones(text);
         }
 
-        anchors.fill: parent
         delegate: BackgroundItem {
             id: delegate
 

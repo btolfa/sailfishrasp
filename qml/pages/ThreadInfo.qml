@@ -15,7 +15,6 @@ Page
         delegate: ListItem {
             id: delegate
             property int indexOfThisDelegate: index
-            //            contentHeight: Theme.itemSizeLarge
             anchors {
                 left: parent.left
                 right: parent.right

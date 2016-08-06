@@ -98,10 +98,10 @@ Page {
             Column {
                 id: rightColumn
                 anchors.right: parent.right
-                Label {
-                    id: price
-                    text: "123" + " ₽" // Тут знак рубля
-                }
+//                Label {
+//                    id: price
+//                    text: "123" + " ₽" // Тут знак рубля
+//                }
                 Label {
                     id: duration
                     text: modelData.duration / 60 + " мин."
@@ -112,7 +112,6 @@ Page {
                 //qmlHandler.getTrainInfo(thread.get("thread").uid, new Date(thread.get("departure")));
                 qmlHandler.getTrainInfo(modelData.thread.uid, new Date(modelData.departure));
                 pageStack.push(Qt.resolvedUrl("ThreadInfo.qml"), {qmlHandler: qmlHandler});
-                //console.log("Clicked " + index)
             }
         }
         VerticalScrollDecorator{}

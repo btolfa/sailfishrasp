@@ -190,8 +190,6 @@ Page {
                 zoneId: page.zoneId
                 placeHolderText: qsTr("Откуда")
                 onChangeFocus: {
-                    console.log("Got focus signal");
-
                     pageHeader.visible = !focusState;
                     currentZone.visible = !focusState;
                     button.visible = !focusState;
@@ -208,8 +206,6 @@ Page {
                 placeHolderText: qsTr("Куда")
 
                 onChangeFocus: {
-                    console.log("Got focus signal");
-
                     pageHeader.visible = !focusState;
                     currentZone.visible = !focusState;
                     button.visible = !focusState;
@@ -225,7 +221,6 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Поиск")
                 onClicked: {
-                    console.log(searchFrom.stationEsr, searchTo.stationEsr);
                     //if (searchFrom.stationEsr && searchTo.stationEsr) {
                         qmlHandler.getRoute(searchFrom.stationEsr, searchTo.stationEsr, dateLabel.selectedDate);
                         pageStack.push(Qt.resolvedUrl("ThreadsPage.qml"), {qmlHandler: qmlHandler});
