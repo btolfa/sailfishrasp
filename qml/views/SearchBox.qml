@@ -44,11 +44,9 @@ Column {
                 stationEsr = null;
 
                 if (text.length > 0) {
-                    console.log("zoneId: ", zoneId);
                     var results = sqltoqml.getHints(text, zoneId);
                     for (var i in results) {
                         hints.model.append(results[i]);
-                        console.log(results[i].esr);
                     }
                 }
             }
@@ -58,7 +56,6 @@ Column {
 
                 if (!activeFocus) {
                     var item = hints.model.get(0);
-                    console.log(item);
                     if (item) {
                         stationEsr = item.esr;
                         searchField.text = item.title;

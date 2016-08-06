@@ -43,11 +43,13 @@ QList<QObject *> SQLtoQML::getZones(QString text)
     QSqlQuery query;
 
     if (text.isEmpty() || text.isNull()) {
-        query.prepare("select id, settlement_title from zone");
+        query.prepare("select id, settlement_title from zone "
+                      "order by settlement_title ASC");
     }
     else {
         query.prepare("select id, settlement_title from zone "
-                      "where settlement_title LIKE :settlement_title");
+                      "where settlement_title LIKE :settlement_title "
+                      "order by settlement_title ASC");
         query.bindValue(":settlement_title", text.toUpper() + "%");
     }
     query.exec();
