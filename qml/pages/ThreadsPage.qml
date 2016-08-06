@@ -33,23 +33,35 @@ import Sailfish.Silica 1.0
 import subtrains 1.0
 
 Page {
+    id: page
     property QmlHandler qmlHandler
 
     BusyIndicator {
-            id: busyIndicator
-            size: BusyIndicatorSize.Large
-            anchors.centerIn: parent
-            property var ready: {return false}
-            running: !ready
-       }
-    Connections{
+        id: busyIndicator
+        size: BusyIndicatorSize.Large
+        anchors.centerIn: parent
+        property var ready: {return false}
+        running: !ready
+    }
+
+    Connections {
         target: qmlHandler
         onThreadsListRecieved: {
             busyIndicator.ready = true;
+            if (!qmlHandler.routeModel || qmlHandler.routeModel.length <= 0) {
+                noAvailableRoutesMessage.visible = true;
+            }
         }
     }
 
-    id: page
+    Label {
+        id: noAvailableRoutesMessage
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        font.pixelSize: Theme.fontSizeMedium
+        visible: false
+        text: "Не нашлось подходящих маршрутов :("
+    }
 
     SilicaListView {
         //    ListView {
@@ -113,10 +125,7 @@ Page {
             Column {
                 id: rightColumn
                 anchors.right: parent.right
-//                Label {
-//                    id: price
-//                    text: "123" + " ₽" // Тут знак рубля
-//                }
+
                 Label {
                     id: duration
                     text: modelData.duration / 60 + " мин."
@@ -124,7 +133,6 @@ Page {
 
             }
             onClicked: {
-                //qmlHandler.getTrainInfo(thread.get("thread").uid, new Date(thread.get("departure")));
                 qmlHandler.getTrainInfo(modelData.thread.uid, new Date(modelData.departure));
                 pageStack.push(Qt.resolvedUrl("ThreadInfo.qml"), {qmlHandler: qmlHandler});
             }
