@@ -33,9 +33,17 @@ import Sailfish.Silica 1.0
 import subtrains 1.0
 
 Page {
-    property QmlHandler qmlHandler;
+    property QmlHandler qmlHandler
+
+    Connections{
+        target: qmlHandler
+        onThreadsListRecieved: {
+            listView.scrollToBottom();
+        }
+    }
 
     id: page
+
     SilicaListView {
         //    ListView {
         id: listView

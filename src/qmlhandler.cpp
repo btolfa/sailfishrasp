@@ -107,6 +107,8 @@ void QmlHandler::onGetRouteFinished(QNetworkReply *netReply)
         }
 
         setRouteModel(jsonArray);
+
+        emit threadsListRecieved();
     }
 }
 

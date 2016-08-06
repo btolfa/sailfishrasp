@@ -17,6 +17,7 @@ class QmlHandler : public QObject
 
     Q_PROPERTY (QJsonArray routeModel READ routeModel NOTIFY routeModelChanged)
     Q_PROPERTY (QVariant trainInfoModel READ trainInfoModel NOTIFY trainInfoModelChanged)
+    Q_PROPERTY (NOTIFY threadsListRecieved)
 public:
     explicit QmlHandler(QObject *parent = 0);
 
@@ -36,6 +37,7 @@ public:
 signals:
     void routeModelChanged();
     void trainInfoModelChanged();
+    void threadsListRecieved();
 public slots:
     void onGetRouteFinished(QNetworkReply* netReply);
     void onGetTrainInfoFinished(QNetworkReply* netReply);
