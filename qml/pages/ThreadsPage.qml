@@ -47,6 +47,14 @@ Page {
         target: qmlHandler
         onThreadsListRecieved: {
             busyIndicator.running = false;
+            viewPlaceholder.text = "Не нашлось подходящих маршрутов :(";
+        }
+        onErrorRecievingThreads: {
+            busyIndicator.running = false;
+            viewPlaceholder.text = "Что-то пошло не так. " +
+                    "Пожалуйста, проверьте, что у вас включена " +
+                    "передача данных " +
+                    "и попробуйте снова";
         }
     }
 
@@ -59,8 +67,9 @@ Page {
             title: qsTr("Маршруты по направлению")
         }
         ViewPlaceholder {
+            id: viewPlaceholder
             enabled: listView.count == 0 && !busyIndicator.running
-            text: "Не нашлось подходящих маршрутов :("
+            text: null
         }
         delegate: ListItem {
             id: delegate
