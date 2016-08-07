@@ -57,6 +57,7 @@ void QmlHandler::getRoute(QString originStation, QString destStation, QDate trip
     urlQuery.addQueryItem("lang","ru");
     urlQuery.addQueryItem("system","esr");
     urlQuery.addQueryItem("date",tripDate.toString("yyyy-MM-dd"));
+    urlQuery.addQueryItem("transport_types","suburban");
 
     reqUrl.setQuery(urlQuery);
 
