@@ -25,7 +25,8 @@ SOURCES += \
     src/NearestZoneFinder.cpp \
     src/harbour-subtrains.cpp \
     src/OurResource.cpp \
-    src/Positioning.cpp
+    src/Positioning.cpp \
+    src/ValuePair.cpp
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
@@ -56,7 +57,8 @@ HEADERS += \
     src/sqltoqml.h \
     src/NearestZoneFinder.h \
     src/OurResource.h \
-    src/Positioning.h
+    src/Positioning.h \
+    src/ValuePair.h
 
 DISTFILES += \
     qml/views/SearchBox.qml \
