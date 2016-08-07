@@ -69,7 +69,7 @@ Page {
         ViewPlaceholder {
             id: viewPlaceholder
             enabled: listView.count == 0 && !busyIndicator.running
-            text: null
+            text: ""
         }
         delegate: ListItem {
             id: delegate

@@ -17,7 +17,7 @@ Positioning::Positioning(QObject *parent)
 void Positioning::positionUpdated(const QGeoPositionInfo &info)
 {
     source->stopUpdates();
-    _currentZone = NearestZoneFinder::findNearestZone(info.coordinate());
+    _currentZone = new SearchHint(NearestZoneFinder::findNearestZone(info.coordinate()));
     emit currentZoneReady();
 }
 

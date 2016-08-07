@@ -1,5 +1,10 @@
 #include "ValuePair.h"
 
+ValuePair::ValuePair()
+    : code(0)
+{
+}
+
 ValuePair::ValuePair(const QString& string, const int code)
     : string(string), code(code)
 {

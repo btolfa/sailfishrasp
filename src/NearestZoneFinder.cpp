@@ -4,7 +4,7 @@
 #include <QVariant>
 #include <QDebug>
 
-SearchHint* NearestZoneFinder::findNearestZone(const QGeoCoordinate &coordinate)
+ValuePair NearestZoneFinder::findNearestZone(const QGeoCoordinate &coordinate)
 {
     QSqlQuery query;
 
@@ -35,7 +35,7 @@ SearchHint* NearestZoneFinder::findNearestZone(const QGeoCoordinate &coordinate)
     return getZoneById(zone);
 }
 
-SearchHint* NearestZoneFinder::getZoneById(const int zone)
+ValuePair NearestZoneFinder::getZoneById(const int zone)
 {
     QSqlQuery query;
 
@@ -44,6 +44,6 @@ SearchHint* NearestZoneFinder::getZoneById(const int zone)
     query.exec();
 
     query.next();
-    return new SearchHint(query.value("settlement_title").toString(), zone);
+    return ValuePair(query.value("settlement_title").toString(), zone);
 }
 

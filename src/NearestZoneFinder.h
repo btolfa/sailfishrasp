@@ -2,13 +2,13 @@
 #define NEARESTZONEFINDER_H
 
 #include <QGeoCoordinate>
-#include "SearchHint.h"
+#include "ValuePair.h"
 
 class NearestZoneFinder
 {
 public:
-    static SearchHint* findNearestZone(const QGeoCoordinate& coordinate);
-    static SearchHint* getZoneById(const int zone);
+    static ValuePair findNearestZone(const QGeoCoordinate& coordinate);
+    static ValuePair getZoneById(const int zone);
 };
 
 #endif // NEARESTZONEFINDER_H

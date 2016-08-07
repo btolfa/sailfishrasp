@@ -28,7 +28,7 @@ Column {
                 var item = hints.model.get(0);
 
                 if (item) {
-                    stationEsr = item.esr;
+                    stationEsr = item.code;
                     searchField.text = item.title;
                 }
 
@@ -57,7 +57,7 @@ Column {
                 if (!activeFocus) {
                     var item = hints.model.get(0);
                     if (item) {
-                        stationEsr = item.esr;
+                        stationEsr = item.code;
                         searchField.text = item.title;
                     }
 
@@ -88,7 +88,7 @@ Column {
             id: listItem
             width: parent.width
             height: Theme.itemSizeExtraSmall
-            property var esrId: esr
+            property var esrId: code
 
             Label {
                 id: hintLabel

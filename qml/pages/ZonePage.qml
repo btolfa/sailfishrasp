@@ -65,7 +65,7 @@ Page {
                 color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
             }
             onClicked: {
-                zoneDialog.accepted(esr, title);
+                zoneDialog.accepted(code, title);
                 pageStack.pop();
             }
         }

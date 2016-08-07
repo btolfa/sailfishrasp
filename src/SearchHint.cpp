@@ -6,9 +6,15 @@ SearchHint::SearchHint(QObject *parent) : QObject(parent)
 }
 
 
-SearchHint::SearchHint(QString title, int id, QObject *parent)
+SearchHint::SearchHint(const QString& title, const int code, QObject *parent)
     : QObject(parent)
-    , _title(title)
-    , _id(id)
+    , value(title, code)
 {
+}
+
+SearchHint::SearchHint(const ValuePair &value, QObject *parent)
+    : QObject(parent)
+    , value(value)
+{
+
 }

@@ -75,7 +75,7 @@ Page {
             id: posRequest
 
             onCurrentZoneReady: {
-                page.zoneId = posRequest.currentZone.esr
+                page.zoneId = posRequest.currentZone.code
                 currentZone.value = posRequest.currentZone.title
             }
         }
