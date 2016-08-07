@@ -22,10 +22,10 @@ SOURCES += \
     src/QmlHandler.cpp \
     src/searchhint.cpp \
     src/sqltoqml.cpp \
-    src/PosRequest.cpp \
     src/NearestZoneFinder.cpp \
     src/harbour-subtrains.cpp \
-    src/OurResource.cpp
+    src/OurResource.cpp \
+    src/Positioning.cpp
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
@@ -54,9 +54,9 @@ HEADERS += \
     src/QmlHandler.h \
     src/searchhint.h \
     src/sqltoqml.h \
-    src/PosRequest.h \
     src/NearestZoneFinder.h \
-    src/OurResource.h
+    src/OurResource.h \
+    src/Positioning.h
 
 DISTFILES += \
     qml/views/SearchBox.qml \

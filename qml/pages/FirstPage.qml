@@ -71,7 +71,7 @@ Page {
             id: sqltoqml
         }
 
-        PosRequest {
+        Positioning {
             id: posRequest
 
             onCurrentZoneReady: {

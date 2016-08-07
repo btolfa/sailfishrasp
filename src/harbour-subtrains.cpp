@@ -39,7 +39,7 @@
 
 #include "QmlHandler.h"
 #include "sqltoqml.h"
-#include "PosRequest.h"
+#include "Positioning.h"
 #include "searchhint.h"
 
 
@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
 
     qmlRegisterType<QmlHandler>("subtrains", 1, 0, "QmlHandler");
     qmlRegisterType<SQLtoQML>("org.crypt.rasp", 1, 0, "SQLtoQML");
-    qmlRegisterType<PosRequest>("org.crypt.rasp", 1, 0, "PosRequest");
+    qmlRegisterType<Positioning>("org.crypt.rasp", 1, 0, "Positioning");
     qmlRegisterType<SearchHint>("org.crypt.rasp", 1, 0, "SearchHint");
 
     QQuickView* qView = SailfishApp::createView();

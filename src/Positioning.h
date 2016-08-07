@@ -8,13 +8,13 @@
 #include <QString>
 #include "searchhint.h"
 
-class PosRequest : public QObject
+class Positioning : public QObject
 {
     Q_OBJECT
     Q_PROPERTY (SearchHint* currentZone READ currentZone NOTIFY currentZoneReady)
     Q_PROPERTY (SearchHint* currentZoneUser WRITE setCurrentZone READ currentZoneUser NOTIFY currentZoneUserChanged)
 public:
-    explicit PosRequest(QObject *parent = 0);
+    explicit Positioning(QObject *parent = 0);
 
     SearchHint* currentZone() {
         return _currentZone;
