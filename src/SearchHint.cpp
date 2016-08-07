@@ -1,4 +1,4 @@
-#include "searchhint.h"
+#include "SearchHint.h"
 
 SearchHint::SearchHint(QObject *parent) : QObject(parent)
 {

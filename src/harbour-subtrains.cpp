@@ -40,7 +40,7 @@
 #include "QmlHandler.h"
 #include "sqltoqml.h"
 #include "Positioning.h"
-#include "searchhint.h"
+#include "SearchHint.h"
 
 
 void loadDb() {

@@ -2,7 +2,7 @@
 #define NEARESTZONEFINDER_H
 
 #include <QGeoCoordinate>
-#include "searchhint.h"
+#include "SearchHint.h"
 
 class NearestZoneFinder
 {

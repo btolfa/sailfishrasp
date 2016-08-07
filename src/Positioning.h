@@ -6,7 +6,7 @@
 #include <QScopedPointer>
 #include <QGeoPositionInfoSource>
 #include <QString>
-#include "searchhint.h"
+#include "SearchHint.h"
 
 class Positioning : public QObject
 {

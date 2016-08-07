@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QtSql/QtSql>
-#include "searchhint.h"
+#include "SearchHint.h"
 
 class SQLtoQML : public QObject
 {
