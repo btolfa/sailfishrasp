@@ -20,13 +20,13 @@ INSTALLS += db
 
 SOURCES += \
     src/QmlHandler.cpp \
-    src/sqltoqml.cpp \
     src/NearestZoneFinder.cpp \
     src/harbour-subtrains.cpp \
     src/OurResource.cpp \
     src/Positioning.cpp \
     src/ValuePair.cpp \
-    src/SearchHint.cpp
+    src/SearchHint.cpp \
+    src/SQLtoQML.cpp
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
@@ -53,12 +53,12 @@ TRANSLATIONS += translations/harbour-subtrains.ts
 
 HEADERS += \
     src/QmlHandler.h \
-    src/sqltoqml.h \
     src/NearestZoneFinder.h \
     src/OurResource.h \
     src/Positioning.h \
     src/ValuePair.h \
-    src/SearchHint.h
+    src/SearchHint.h \
+    src/SQLtoQML.h
 
 DISTFILES += \
     qml/views/SearchBox.qml \

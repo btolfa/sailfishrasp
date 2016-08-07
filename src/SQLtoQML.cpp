@@ -1,4 +1,4 @@
-#include "sqltoqml.h"
+#include "SQLtoQML.h"
 #include <QtSql/QtSql>
 #include "sailfishapp.h"
 
