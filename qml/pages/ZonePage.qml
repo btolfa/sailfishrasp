@@ -51,8 +51,12 @@ Page {
         anchors.fill: parent
         anchors.topMargin: Theme.itemSizeLarge
 
-        function getZones(text) {
-             return zoneSql.getZones(text);
+        function getZonesLike(text) {
+             return zoneSql.getZonesLike(text);
+        }
+
+        function getAllZones() {
+             return zoneSql.getAllZones();
         }
 
         delegate: BackgroundItem {
@@ -70,7 +74,7 @@ Page {
             }
         }
         Component.onCompleted: {
-            var results = getZones("");
+            var results = getAllZones();
             for (var i in results) {
                 listView.model.append(results[i]);
             }

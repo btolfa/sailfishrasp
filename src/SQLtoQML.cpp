@@ -5,7 +5,6 @@
 SQLtoQML::SQLtoQML(QObject *parent)
     : QObject(parent)
 {
-    qDebug() << "INIT SQLtoQML";
 }
 
 QList<QObject*> SQLtoQML::getHints(QString text, int zone)
@@ -38,21 +37,33 @@ QList<QObject*> SQLtoQML::getHints(QString text, int zone)
     return hints;
 }
 
-QList<QObject *> SQLtoQML::getZones(QString text)
+QList<QObject *> SQLtoQML::getZonesLike(QString text)
 {
     QSqlQuery query;
 
-    if (text.isEmpty() || text.isNull()) {
-        query.prepare("select id, settlement_title from zone "
-                      "order by settlement_title ASC");
-    }
-    else {
-        query.prepare("select id, settlement_title from zone "
-                      "where settlement_title LIKE :settlement_title "
-                      "order by settlement_title ASC");
-        query.bindValue(":settlement_title", text.toUpper() + "%");
-    }
+    query.prepare("select id, settlement_title from zone "
+                  "where settlement_title LIKE :settlement_title "
+                  "order by settlement_title ASC");
+    query.bindValue(":settlement_title", text.toUpper() + "%");
     query.exec();
+
+    QList<QObject*> zones;
+    while (query.next()) {
+        zones.append(new SearchHint(
+                             query.value("settlement_title").toString()
+                           , query.value("id").toInt()
+                         ));
+    }
+
+    return zones;
+}
+
+QList<QObject *> SQLtoQML::getAllZones()
+{
+    QSqlQuery query;
+
+    query.prepare("select id, settlement_title from zone "
+                  "order by settlement_title ASC");
 
     QList<QObject*> zones;
     while (query.next()) {
