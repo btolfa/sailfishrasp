@@ -62,7 +62,7 @@ QList<QObject *> SQLtoQML::getAllZones()
 {
     QSqlQuery query;
 
-    query.prepare("select id, settlement_title from zone "
+    query.exec("select id, settlement_title from zone "
                   "order by settlement_title ASC");
 
     QList<QObject*> zones;
