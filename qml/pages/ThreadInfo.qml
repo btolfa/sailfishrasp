@@ -63,9 +63,9 @@ Page
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
                 text:
-                    if (modelData.stop_time || index === 0 || index === sListView.count-1)
-                    {
-                        modelData.departure.substring(11,16)}
+                    if ((modelData.stop_time || index === 0 || index === sListView.count-1) && modelData.departure)
+                    {modelData.departure.substring(11,16)}
+                    else {""}
                 font.bold: true
             }
         }
