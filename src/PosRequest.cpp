@@ -2,11 +2,12 @@
 #include <QDebug>
 #include <QUrlQuery>
 #include <QJsonArray>
+
 #include "NearestZoneFinder.h"
+#include "OurResource.h"
 
 PosRequest::PosRequest(QObject *parent)
     : QObject(parent)
-    , apikey("20e7cb3e-6b05-4774-bcbb-4b0fb74a58b0")
     , source(QGeoPositionInfoSource::createDefaultSource(parent))
     , nam(new QNetworkAccessManager())
 {
@@ -33,7 +34,7 @@ void PosRequest::getNearestStations(const QGeoPositionInfo &info)
 {
     QUrl url = QUrl("https://api.rasp.yandex.net/v1.0/nearest_stations/");
     QUrlQuery urlQuery;
-    urlQuery.addQueryItem("apikey", "20e7cb3e-6b05-4774-bcbb-4b0fb74a58b0");
+    urlQuery.addQueryItem("apikey", OurResource::getApiKey());
     urlQuery.addQueryItem("format", "json");
     urlQuery.addQueryItem("lat", QString("%1").arg(info.coordinate().latitude()));
     urlQuery.addQueryItem("lng", QString("%1").arg(info.coordinate().longitude()));

@@ -1,4 +1,5 @@
 #include "QmlHandler.h"
+#include "OurResource.h"
 
 QmlHandler::QmlHandler(QObject *parent) : QObject(parent)
 {
@@ -18,7 +19,7 @@ void QmlHandler::getTrainInfo(QString threadId, QDate tripDate)
 
     QUrl reqUrl = QUrl("https://api.rasp.yandex.net/v1.0/thread/");
     QUrlQuery urlQuery;
-    urlQuery.addQueryItem("apikey","20e7cb3e-6b05-4774-bcbb-4b0fb74a58b0");
+    urlQuery.addQueryItem("apikey", OurResource::getApiKey());
     urlQuery.addQueryItem("format","json");
     urlQuery.addQueryItem("lang","ru");
     urlQuery.addQueryItem("uid", threadId);
@@ -49,7 +50,7 @@ void QmlHandler::getRoute(QString originStation, QString destStation, QDate trip
 
     QUrl reqUrl = QUrl("https://api.rasp.yandex.net/v1.0/search/");
     QUrlQuery urlQuery;
-    urlQuery.addQueryItem("apikey","20e7cb3e-6b05-4774-bcbb-4b0fb74a58b0");
+    urlQuery.addQueryItem("apikey", OurResource::getApiKey());
     urlQuery.addQueryItem("format","json");
     urlQuery.addQueryItem("from",originStation);
     urlQuery.addQueryItem("to",destStation);

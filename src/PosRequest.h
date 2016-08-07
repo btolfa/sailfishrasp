@@ -45,7 +45,6 @@ private:
 
     SearchHint* _currentZone;
 
-    QString apikey;
     QScopedPointer<QGeoPositionInfoSource> source;
     QScopedPointer<QNetworkAccessManager> nam;
 };
