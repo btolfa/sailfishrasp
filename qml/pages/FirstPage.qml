@@ -33,7 +33,6 @@ import Sailfish.Silica 1.0
 import subtrains 1.0
 import "../views"
 import "Util.js" as Util
-import org.crypt.rasp 1.0
 
 Page {
     id: page
@@ -55,7 +54,7 @@ Page {
         PullDownMenu {
             MenuItem {
                 text: qsTr("Сменить пригородную зону")
-                onClicked: { var dialog = pageStack.push(Qt.resolvedUrl("ZonePage.qml"));
+                onClicked: { var dialog = pageStack.push(Qt.resolvedUrl("ZonePage.qml"), {qmlHandler: qmlHandler});
                     dialog.accepted.connect(function(id, text) {
                         page.zoneId = id;
                         currentZone.value = text;
@@ -66,10 +65,6 @@ Page {
 
         // Place our content in a Column.  The PageHeader is always placed at the top
         // of the page, followed by our content.
-
-        SqlToQml {
-            id: sqltoqml
-        }
 
         Positioning {
             id: posRequest

@@ -25,8 +25,7 @@ SOURCES += \
     src/OurResource.cpp \
     src/Positioning.cpp \
     src/ValuePair.cpp \
-    src/SearchHint.cpp \
-    src/SqlToQml.cpp \
+    src/SearchHint.cpp
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
@@ -58,9 +57,6 @@ HEADERS += \
     src/Positioning.h \
     src/ValuePair.h \
     src/SearchHint.h \
-    src/SqlToQml.h \
-    src/SqltoQml.h \
-    src/SqlToQml.h
 
 DISTFILES += \
     qml/views/SearchBox.qml \

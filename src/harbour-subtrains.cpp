@@ -38,7 +38,6 @@
 
 
 #include "QmlHandler.h"
-#include "SqlToQml.h"
 #include "Positioning.h"
 #include "SearchHint.h"
 
@@ -57,21 +56,11 @@ int main(int argc, char *argv[])
     sailfishRaspApp -> setApplicationName("Suburban Trains");
     sailfishRaspApp -> setOrganizationName("SixTiredGuys");
 
-    // SailfishApp::main() will display "qml/template.qml", if you need more
-    // control over initialization, you can use:
-    //
-    //   - SailfishApp::application(int, char *[]) to get the QGuiApplication *
-    //   - SailfishApp::createView() to get a new QQuickView * instance
-    //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
-    //
-    // To display the view, call "show()" (will show fullscreen on device).
-
     loadDb();
 
     qmlRegisterType<QmlHandler>("subtrains", 1, 0, "QmlHandler");
-    qmlRegisterType<SqlToQml>("org.crypt.rasp", 1, 0, "SqlToQml");
-    qmlRegisterType<Positioning>("org.crypt.rasp", 1, 0, "Positioning");
-    qmlRegisterType<SearchHint>("org.crypt.rasp", 1, 0, "SearchHint");
+    qmlRegisterType<Positioning>("subtrains", 1, 0, "Positioning");
+    qmlRegisterType<SearchHint>("subtrains", 1, 0, "SearchHint");
 
     QQuickView* qView = SailfishApp::createView();
     qView->setSource(SailfishApp::pathTo("qml/harbour-subtrains.qml"));

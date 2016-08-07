@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import subtrains 1.0
 
 Column {
     id: searchColumn
@@ -44,7 +45,7 @@ Column {
                 stationEsr = null;
 
                 if (text.length > 0) {
-                    var results = sqltoqml.getHints(text, zoneId);
+                    var results = qmlHandler.getStationHints(text, zoneId);
                     for (var i in results) {
                         hints.model.append(results[i]);
                     }

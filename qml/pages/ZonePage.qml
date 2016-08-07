@@ -30,12 +30,13 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import org.crypt.rasp 1.0
+import subtrains 1.0
 
 
 Page {
     id: zoneDialog
     signal accepted(int id, string text)
+    property QmlHandler qmlHandler
 
     // Заголовок
     PageHeader {
@@ -52,11 +53,11 @@ Page {
         anchors.topMargin: Theme.itemSizeLarge
 
         function getZonesLike(text) {
-             return zoneSql.getZonesLike(text);
+             return qmlHandler.getZonesLike(text);
         }
 
         function getAllZones() {
-             return zoneSql.getAllZones();
+             return qmlHandler.getAllZones();
         }
 
         delegate: BackgroundItem {
@@ -78,9 +79,6 @@ Page {
             for (var i in results) {
                 listView.model.append(results[i]);
             }
-        }
-        SqlToQml {
-            id: zoneSql
         }
         VerticalScrollDecorator {}
     }

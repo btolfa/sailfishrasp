@@ -10,6 +10,8 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QQmlListProperty>
+#include <QtSql/QtSql>
+#include "SearchHint.h"
 
 class QmlHandler : public QObject
 {
@@ -24,6 +26,10 @@ public:
 
     Q_INVOKABLE void getRoute(QString originStation, QString destStation, QDate tripDate);
     Q_INVOKABLE void getTrainInfo(QString threadId, QDate tripDate);
+
+    Q_INVOKABLE QList<QObject*> getStationHints(QString text, int zone);
+    Q_INVOKABLE QList<QObject*> getZonesLike(QString text);
+    Q_INVOKABLE QList<QObject*> getAllZones();
 
     QJsonArray routeModel()
     {
