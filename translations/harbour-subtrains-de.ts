@@ -4,8 +4,8 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <source>My Cover</source>
-        <translation>Mein Cover</translation>
+        <source>Suburban Trains</source>
+        <translation>Suburban Trains</translation>
     </message>
 </context>
 <context>

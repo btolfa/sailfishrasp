@@ -54,7 +54,7 @@ void loadDb() {
 int main(int argc, char *argv[])
 {
     QGuiApplication * sailfishRaspApp = SailfishApp::application(argc, argv);
-    sailfishRaspApp -> setApplicationName("TimeToSail");
+    sailfishRaspApp -> setApplicationName("Suburban Trains");
     sailfishRaspApp -> setOrganizationName("SixTiredGuys");
 
     // SailfishApp::main() will display "qml/template.qml", if you need more
