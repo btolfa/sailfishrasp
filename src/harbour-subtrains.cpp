@@ -43,14 +43,12 @@
 #include "searchhint.h"
 
 
-QSqlDatabase loadDb() {
+void loadDb() {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(SailfishApp::pathTo("db/rasp.sqlite").path());
     if (! db.open()) {
         qDebug() << db.lastError().text();
     }
-
-    return db;
 }
 
 int main(int argc, char *argv[])
@@ -68,7 +66,7 @@ int main(int argc, char *argv[])
     //
     // To display the view, call "show()" (will show fullscreen on device).
 
-    QSqlDatabase db = loadDb();
+    loadDb();
 
     qmlRegisterType<QmlHandler>("subtrains", 1, 0, "QmlHandler");
     qmlRegisterType<SQLtoQML>("org.crypt.rasp", 1, 0, "SQLtoQML");
