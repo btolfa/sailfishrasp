@@ -3,11 +3,8 @@
 
 #include <QObject>
 #include <QGeoPositionInfo>
-#include <QNetworkReply>
 #include <QScopedPointer>
 #include <QGeoPositionInfoSource>
-#include <QNetworkAccessManager>
-#include <QJsonDocument>
 #include <QString>
 #include "searchhint.h"
 
@@ -37,16 +34,12 @@ signals:
     void currentZoneReady();
     void currentZoneUserChanged();
 public slots:
-    void requestFinished(QNetworkReply *reply);
     void positionUpdated(const QGeoPositionInfo &info);
 private:
-    void getNearestStations(const QGeoPositionInfo &info);
-    void parseResponce(const QJsonDocument& document);
 
     SearchHint* _currentZone;
 
     QScopedPointer<QGeoPositionInfoSource> source;
-    QScopedPointer<QNetworkAccessManager> nam;
 };
 
 #endif // POSREQUEST_H
