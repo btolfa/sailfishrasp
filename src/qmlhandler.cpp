@@ -2,7 +2,6 @@
 
 QmlHandler::QmlHandler(QObject *parent) : QObject(parent)
 {
-//    qDebug()<<"\n-----New qml handler created\n";
 }
 
 void QmlHandler::setRouteModel(const QJsonArray newRtModel)
@@ -13,7 +12,6 @@ void QmlHandler::setRouteModel(const QJsonArray newRtModel)
 
 void QmlHandler::getTrainInfo(QString threadId, QDate tripDate)
 {
-//    qDebug()<<"Get train Info: "+threadId+" "+tripDate.toString();
 
     QNetworkAccessManager* m_pNetAccessMngr =
                                  new QNetworkAccessManager(this);
@@ -78,7 +76,6 @@ void QmlHandler::getRoute(QString originStation, QString destStation, QDate trip
 
 void QmlHandler::onGetRouteFinished(QNetworkReply *netReply)
 {
-    //QList<Thread*> dataList; //будущая модель
     QVariantList dataList;
 
     if (netReply != NULL &&
@@ -86,8 +83,6 @@ void QmlHandler::onGetRouteFinished(QNetworkReply *netReply)
             netReply->error() == QNetworkReply::NoError)
     {
         QString replyStr = netReply->readAll();
-
-//        qDebug()<<"\n Success getting trains!";
 
         QJsonDocument jsonResponse = QJsonDocument::fromJson(replyStr.toUtf8());
         QJsonObject jsonObject = jsonResponse.object();
@@ -99,9 +94,6 @@ void QmlHandler::onGetRouteFinished(QNetworkReply *netReply)
             obj.insert("hasAlreadyLeft",
                        (QDateTime::currentDateTime() >=
                         QDateTime::fromString(obj.value("departure").toString())));
-
-//            qDebug()<<i + "  " + QDateTime::currentDateTime().toString() + "  " +
-//                      QDateTime::fromString(obj.value("departure").toString()).toString();
 
             jsonArray.replace(i, obj);
         }
@@ -122,7 +114,6 @@ void QmlHandler::onGetTrainInfoFinished(QNetworkReply* netReply)
             && netReply->bytesAvailable() > 0
             && netReply->error() == QNetworkReply::NoError)
     {
-//        qDebug()<<"\n Success getting threadInfo!";
 
         m_trainInfoModel = QJsonDocument::fromJson(
                     ((QString)netReply->readAll())

@@ -28,7 +28,6 @@ public:
     QJsonArray routeModel()
     {
         return m_routeModel;
-        //return QVariant(this, m_routeModel);
     }
 
     QVariant trainInfoModel()
