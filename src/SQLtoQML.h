@@ -5,11 +5,11 @@
 #include <QtSql/QtSql>
 #include "SearchHint.h"
 
-class SQLtoQML : public QObject
+class SqlToQml : public QObject
 {
     Q_OBJECT
 public:
-    SQLtoQML(QObject *parent = 0);
+    SqlToQml(QObject *parent = 0);
     Q_INVOKABLE QList<QObject*> getHints(QString text, int zone);
     Q_INVOKABLE QList<QObject*> getZonesLike(QString text);
     Q_INVOKABLE QList<QObject*> getAllZones();

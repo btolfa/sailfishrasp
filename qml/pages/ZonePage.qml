@@ -79,7 +79,7 @@ Page {
                 listView.model.append(results[i]);
             }
         }
-        SQLtoQML {
+        SqlToQml {
             id: zoneSql
         }
         VerticalScrollDecorator {}
