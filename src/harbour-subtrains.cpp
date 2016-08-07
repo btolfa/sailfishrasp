@@ -37,7 +37,7 @@
 #include <QSqlDatabase>
 
 
-#include "qmlhandler.h"
+#include "QmlHandler.h"
 #include "sqltoqml.h"
 #include "PosRequest.h"
 #include "searchhint.h"

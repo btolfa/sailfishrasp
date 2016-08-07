@@ -19,7 +19,7 @@ db.path = /usr/share/$${TARGET}/
 INSTALLS += db
 
 SOURCES += \
-    src/qmlhandler.cpp \
+    src/QmlHandler.cpp \
     src/searchhint.cpp \
     src/sqltoqml.cpp \
     src/PosRequest.cpp \
@@ -50,7 +50,7 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/harbour-subtrains.ts
 
 HEADERS += \
-    src/qmlhandler.h \
+    src/QmlHandler.h \
     src/searchhint.h \
     src/sqltoqml.h \
     src/PosRequest.h \

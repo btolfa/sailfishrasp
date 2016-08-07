@@ -1,4 +1,4 @@
-#include "qmlhandler.h"
+#include "QmlHandler.h"
 
 QmlHandler::QmlHandler(QObject *parent) : QObject(parent)
 {
