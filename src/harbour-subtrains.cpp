@@ -38,7 +38,7 @@
 
 
 #include "QmlHandler.h"
-#include "sqltoqml.h"
+#include "SqlToQml.h"
 #include "Positioning.h"
 #include "SearchHint.h"
 
@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
     loadDb();
 
     qmlRegisterType<QmlHandler>("subtrains", 1, 0, "QmlHandler");
-    qmlRegisterType<SQLtoQML>("org.crypt.rasp", 1, 0, "SQLtoQML");
+    qmlRegisterType<SqlToQml>("org.crypt.rasp", 1, 0, "SqlToQml");
     qmlRegisterType<Positioning>("org.crypt.rasp", 1, 0, "Positioning");
     qmlRegisterType<SearchHint>("org.crypt.rasp", 1, 0, "SearchHint");
 

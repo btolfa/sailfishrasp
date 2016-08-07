@@ -1,13 +1,13 @@
-#include "SQLtoQML.h"
+#include "SqlToQml.h"
 #include <QtSql/QtSql>
 #include "sailfishapp.h"
 
-SQLtoQML::SQLtoQML(QObject *parent)
+SqlToQml::SqlToQml(QObject *parent)
     : QObject(parent)
 {
 }
 
-QList<QObject*> SQLtoQML::getHints(QString text, int zone)
+QList<QObject*> SqlToQml::getHints(QString text, int zone)
 {
     QSqlQuery query;
 
@@ -37,7 +37,7 @@ QList<QObject*> SQLtoQML::getHints(QString text, int zone)
     return hints;
 }
 
-QList<QObject *> SQLtoQML::getZonesLike(QString text)
+QList<QObject *> SqlToQml::getZonesLike(QString text)
 {
     QSqlQuery query;
 
@@ -58,7 +58,7 @@ QList<QObject *> SQLtoQML::getZonesLike(QString text)
     return zones;
 }
 
-QList<QObject *> SQLtoQML::getAllZones()
+QList<QObject *> SqlToQml::getAllZones()
 {
     QSqlQuery query;
 
