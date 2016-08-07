@@ -6,7 +6,7 @@
 struct ValuePair
 {
 public:
-    ValuePair(const QString& string, const code);
+    ValuePair(const QString& string, const int code);
     ValuePair(const ValuePair& other);
     ValuePair& operator=(const ValuePair& other);
 private:

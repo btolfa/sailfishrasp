@@ -19,4 +19,6 @@ ValuePair &ValuePair::operator=(const ValuePair &other)
 
     string = other.string;
     code = other.code;
+
+    return *this;
 }
