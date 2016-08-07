@@ -44,13 +44,6 @@
     </message>
 </context>
 <context>
-    <name>ThreadInfo</name>
-    <message>
-        <source>Маршруты по направлению</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>ThreadsPage</name>
     <message>
         <source>Маршруты по направлению</source>

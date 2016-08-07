@@ -10,11 +10,12 @@ Page
         model: qmlHandler.trainInfoModel.stops
         anchors.fill: parent
         header: PageHeader {
-            title: qsTr("Маршруты по направлению")
+            title: "Остановки по маршруту"
         }
         delegate: ListItem {
             id: delegate
             property int indexOfThisDelegate: index
+            height: Theme.itemSizeMedium
             anchors {
                 left: parent.left
                 right: parent.right
@@ -51,7 +52,6 @@ Page
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.rightMargin: Theme.paddingMedium
                 text: modelData.station.title
-                //                    elide: Text.ElideRight
                 truncationMode: TruncationMode.Fade
                 color: if (!modelData.stop_time && index !== 0 && index !== sListView.count-1)
                        {Theme.secondaryColor} else
@@ -60,12 +60,19 @@ Page
 
             Label {
                 id: time
+                width: 90
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
-                text:
-                    if ((modelData.stop_time || index === 0 || index === sListView.count-1) && modelData.departure)
-                    {modelData.departure.substring(11,16)}
-                    else {""}
+                font.pixelSize: Theme.fontSizeSmall
+                text: {
+                    var resultText = "";
+                    if (modelData.stop_time || index === 0 || index === sListView.count-1)
+                    {
+                        resultText = (modelData.arrival ? modelData.arrival.substring(11, 16) + " -" : "-") + "\r\n" +
+                                (modelData.departure ? modelData.departure.substring(11, 16) : "-");
+                    }
+                    return resultText;
+                }
                 font.bold: true
             }
         }

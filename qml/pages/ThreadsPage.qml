@@ -64,7 +64,7 @@ Page {
         model: qmlHandler.routeModel
         anchors.fill: parent
         header: PageHeader {
-            title: qsTr("Маршруты по направлению")
+            title: "Маршруты по направлению"
         }
         ViewPlaceholder {
             id: viewPlaceholder
@@ -73,18 +73,6 @@ Page {
         }
         delegate: ListItem {
             id: delegate
-
-            //            property Thread thread: qmlHandler.routeModel[model.index]
-            //            Label {
-            //                anchors.verticalCenter: parent.verticalCenter
-            //                width: parent.width - Theme.paddingLarge * 2
-            //                x: Theme.paddingLarge
-            //                text: qsTr("Item") + " " + index
-            //                anchors.verticalCenter: parent.verticalCenter
-            //                color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
-            //                text: thread.get("arrival").substring(11,16)
-            //                text: modelData.arrival + "   " + modelData.hasAlreadyLeft;
-
             contentHeight: Theme.itemSizeLarge
             anchors {
                 left: parent.left
@@ -125,6 +113,7 @@ Page {
             Column {
                 id: rightColumn
                 anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
 
                 Label {
                     id: duration
