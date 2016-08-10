@@ -3,10 +3,8 @@
 <!-- created by axpde for Wikipedia -->
 <svg xmlns="http://www.w3.org/2000/svg"
      width="500" height="500" viewBox="0 0 500 500">
-<title>BSicon U-Bahnhof</title>
-
 <g stroke="none" fill="none">
- <path d="M 250,0 V 500" stroke="#CCCCCC" stroke-width="100" />
- <circle cx="250" cy="250" r="150" fill="#CCCCCC" />
+ <path d="M 250,0 V 500" stroke="#FFFFFF" stroke-width="80" />
+ <circle cx="250" cy="250" r="120" fill="#999999" />
 </g>
 </svg>

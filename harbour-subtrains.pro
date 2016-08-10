@@ -68,6 +68,7 @@ DISTFILES += \
     qml/pages/line-top.svg \
     qml/pages/line-grey.svg \
     qml/harbour-subtrains.qml \
-    harbour-subtrains.desktop
+    harbour-subtrains.desktop \
+    qml/pages/AboutPage.qml
 
 QT+= sql positioning

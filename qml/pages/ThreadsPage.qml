@@ -47,14 +47,16 @@ Page {
         target: qmlHandler
         onThreadsListRecieved: {
             busyIndicator.running = false;
-            viewPlaceholder.text = "Не нашлось подходящих маршрутов :(";
+            viewPlaceholder.text =
+                    qsTr("Не нашлось подходящих маршрутов :(");
         }
         onErrorRecievingThreads: {
             busyIndicator.running = false;
-            viewPlaceholder.text = "Что-то пошло не так. " +
+            viewPlaceholder.text =
+                    qsTr("Что-то пошло не так. " +
                     "Пожалуйста, проверьте, что у вас включена " +
                     "передача данных " +
-                    "и попробуйте снова";
+                    "и попробуйте снова");
         }
     }
 
@@ -64,7 +66,7 @@ Page {
         model: qmlHandler.routeModel
         anchors.fill: parent
         header: PageHeader {
-            title: "Маршруты по направлению"
+            title: qsTr("Маршруты по направлению")
         }
         ViewPlaceholder {
             id: viewPlaceholder
@@ -117,7 +119,7 @@ Page {
 
                 Label {
                     id: duration
-                    text: modelData.duration / 60 + " мин."
+                    text: modelData.duration / 60 + qsTr(" мин.")
                 }
 
             }

@@ -40,7 +40,7 @@ Page {
 
     // Заголовок
     PageHeader {
-        title: "Регионы"
+        title: qsTr("Регионы")
         id: zonePageHeader
         height: Theme.itemSizeLarge
     }

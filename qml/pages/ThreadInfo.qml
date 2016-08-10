@@ -10,7 +10,7 @@ Page
         model: qmlHandler.trainInfoModel.stops
         anchors.fill: parent
         header: PageHeader {
-            title: "Интервалы остановок"
+            title: qsTr("Интервалы остановок")
         }
         delegate: ListItem {
             id: delegate
@@ -44,6 +44,7 @@ Page
                 height: Theme.itemSizeMedium
                 sourceSize.width: width
                 sourceSize.height: height
+                anchors.verticalCenter: parent.verticalCenter
             }
 
             Label {
@@ -68,12 +69,16 @@ Page
                     var resultText = "";
                     if (modelData.stop_time || index === 0 || index === sListView.count-1)
                     {
-                        resultText = (modelData.arrival ? modelData.arrival.substring(11, 16) + " –" : "–") + "\r\n" +
-                                (modelData.departure ? modelData.departure.substring(11, 16) : "–");
+                        // if (modelData.arrival === "" || modelData.departure === "")
+
+                        resultText = ( (modelData.arrival ? modelData.arrival.substring(11, 16) : "")
+                                      + (modelData.arrival ? modelData.departure ? " –\r\n" : "" : "" )
+                                      + (modelData.departure ? modelData.departure.substring(11, 16) : "") );
                     }
                     return resultText;
                 }
-                font.bold: true
+                font.bold: false
+                horizontalAlignment: Text.AlignRight
             }
         }
         VerticalScrollDecorator{}

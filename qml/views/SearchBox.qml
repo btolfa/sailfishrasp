@@ -15,14 +15,14 @@ Column {
 
     Row {
         id: searchRow
-        spacing: Theme.paddingSmall
+        spacing: Theme.paddingMedium
         width: parent.width
 
         SearchField {
             id: searchField
             placeholderText: "PlaceHolder text"
             anchors.verticalCenter: parent.verticalCenter
-            width: parent.width - locateFrom.width - Theme.horizontalPageMargin - parent.spacing
+            width: parent.width // - Theme.horizontalPageMargin - Theme.paddingSmall - locateFrom.width
             EnterKey.enabled: hints.count > 0
             EnterKey.iconSource: "image://theme/icon-m-enter-next"
             EnterKey.onClicked: {
@@ -69,13 +69,13 @@ Column {
             }
         }
 
-        IconButton{
-            id: locateFrom
-            anchors.verticalCenter: parent.verticalCenter
-            //onClicked: whereFrom()
-            //icon.source:
-            //    "image://theme/icon-m-whereami"
-        }
+//        IconButton{
+//            id: locateFrom
+//            anchors.verticalCenter: parent.verticalCenter
+//            //onClicked: whereFrom()
+//            //icon.source:
+//            //    "image://theme/icon-m-whereami"
+//        }
     }
 
     SilicaListView {

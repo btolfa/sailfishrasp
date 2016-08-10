@@ -52,6 +52,12 @@ Page {
 
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
+
+            MenuItem{
+                text: qsTr("О программе")
+                onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
+            }
+
             MenuItem {
                 text: qsTr("Сменить пригородную зону")
                 onClicked: { var dialog = pageStack.push(Qt.resolvedUrl("ZonePage.qml"), {qmlHandler: qmlHandler});
@@ -99,7 +105,7 @@ Page {
             BackgroundItem {
                 id: button
                 width: parent.width
-                height: Theme.itemSizeLarge
+                height: Theme.itemSizeMedium
                 //                anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     var currentDate = new Date();
@@ -156,7 +162,7 @@ Page {
                     id: moreImage
                     anchors {
                         right: parent.right
-                        rightMargin: Theme.horizontalPageMargin + Theme.paddingSmall
+                        rightMargin: Theme.paddingMedium * 2
                         verticalCenter: parent.verticalCenter
                     }
                     source: "image://theme/icon-m-right?" + (button.highlighted ? Theme.highlightColor
@@ -191,6 +197,7 @@ Page {
                     // Handle badDate somehow
                     searchTo.visible = !focusState;
                 }
+                width: parent.width
             }
 
             // КУДА
@@ -199,7 +206,6 @@ Page {
                 id: searchTo
                 zoneId: page.zoneId
                 placeHolderText: qsTr("Куда")
-
                 onChangeFocus: {
                     pageHeader.visible = !focusState;
                     currentZone.visible = !focusState;
@@ -207,9 +213,11 @@ Page {
                     // Handle badDate somehow
                     searchFrom.visible = !focusState;
                 }
+                width: parent.width
+
             }
 
-            // ВРЕМЕННАЯ КНОПКА
+            // КНОПКА ПОИСКА
 
             Button {
                 //enabled: searchFrom.stationEsr && searchTo.stationEsr
@@ -217,11 +225,13 @@ Page {
                 text: qsTr("Поиск")
                 onClicked: {
                     //if (searchFrom.stationEsr && searchTo.stationEsr) {
-                        qmlHandler.getRoute(searchFrom.stationEsr, searchTo.stationEsr, dateLabel.selectedDate);
-                        pageStack.push(Qt.resolvedUrl("ThreadsPage.qml"), {qmlHandler: qmlHandler});
+                    qmlHandler.getRoute(searchFrom.stationEsr, searchTo.stationEsr, dateLabel.selectedDate);
+                    pageStack.push(Qt.resolvedUrl("ThreadsPage.qml"), {qmlHandler: qmlHandler});
                     //}
                 }
             }
         }
     }
 }
+
+
