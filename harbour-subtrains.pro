@@ -48,7 +48,10 @@ CONFIG += sailfishapp_i18n
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/harbour-subtrains.ts
+TRANSLATIONS += \
+    translations/harbour-subtrains-ru.ts
+    translations/harbour-subtrains-en.ts
+    translations/harbour-subtrains.ts
 
 HEADERS += \
     src/QmlHandler.h \
@@ -62,7 +65,6 @@ DISTFILES += \
     qml/views/SearchBox.qml \
     qml/pages/ThreadsPage.qml \
     qml/pages/ThreadInfo.qml \
-    qml/cover/CryptoCover.qml \
     qml/pages/line-bot.svg \
     qml/pages/line-med.svg \
     qml/pages/line-top.svg \

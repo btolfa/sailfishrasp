@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru_RU">
+<TS version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="12"/>
         <source>PAGES.ABOUT</source>
-        <translation>О программе</translation>
+        <translation>About</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="17"/>

@@ -54,16 +54,16 @@ CoverBackground {
     }
 
 
-    CoverActionList {
-        id: coverAction
-        enabled: false
+//    CoverActionList {
+//        id: coverAction
+//        enabled: false
 
-        CoverAction {
-            iconSource: "image://theme/icon-cover-next"
-        }
+//        CoverAction {
+//            iconSource: "image://theme/icon-cover-next"
+//        }
 
-        CoverAction {
-            iconSource: "image://theme/icon-cover-pause"
-        }
-    }
+//        CoverAction {
+//            iconSource: "image://theme/icon-cover-pause"
+//        }
+//    }
 }
