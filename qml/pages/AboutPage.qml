@@ -9,7 +9,7 @@ Page {
 
         PageHeader {
             id: header
-            title: qsTr("PAGES.ABOUT")
+            title: ("О программе")
         }
 
         DetailItem {
@@ -26,14 +26,13 @@ Page {
         BackgroundItem{
             width: parent.width
             height: copyr.height
-            onClicked: {console.log(Qt.locale()); Qt.openUrlExternally("http://rasp.yandex.ru/");}
+            onClicked: Qt.openUrlExternally("http://rasp.yandex.ru/")
             Image {
                 id: copyr
                 source: "copyright.svg"
-                sourceSize.width: parent.width * 0.8
+                sourceSize.width: width
                 sourceSize.height: height
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
             }
         }
     }
