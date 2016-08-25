@@ -38,8 +38,7 @@ ApplicationWindow
     property QmlHandler qmlHandler: QmlHandler { }
 
     initialPage: Component { FirstPage { } }
-    //cover: Qt.resolvedUrl("cover/CoverPage.qml")
-    cover: Qt.resolvedUrl("cover/CryptoCover.qml")
+    cover: Qt.resolvedUrl("cover/CoverPage.qml")
     allowedOrientations: Orientation.All
     _defaultPageOrientations: Orientation.All
 }

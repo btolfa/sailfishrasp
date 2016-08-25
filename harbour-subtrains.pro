@@ -62,7 +62,6 @@ DISTFILES += \
     qml/views/SearchBox.qml \
     qml/pages/ThreadsPage.qml \
     qml/pages/ThreadInfo.qml \
-    qml/cover/CryptoCover.qml \
     qml/pages/line-bot.svg \
     qml/pages/line-med.svg \
     qml/pages/line-top.svg \
