@@ -14,6 +14,7 @@ Page
         }
         delegate: ListItem {
             id: delegate
+            enabled: false
             property int indexOfThisDelegate: index
             height: Theme.itemSizeMedium
             anchors {
