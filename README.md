@@ -1,6 +1,6 @@
 # Suburban Trains
 
-<img src="res/icon/icon-plain.svg" width="150">
+<img src="res/icon/icon.png" width="150">
 
 ###### Расписание электричек под Sailfish OS. <br> Доступно на [OpenRepos](https://openrepos.net/content/euf/suburban-trains).
 
@@ -12,12 +12,12 @@
 
 ## Скриншоты
 
-<a href="pics/screenshot-1.png"> <img src="pics/screenshot-1.png" width="150"> </a> 
-<a href="pics/screenshot-2.png"> <img src="pics/screenshot-2.png" width="150"> </a> 
-<a href="pics/screenshot-3.png"> <img src="pics/screenshot-3.png" width="150"> </a> 
-<a href="pics/screenshot-4.png"> <img src="pics/screenshot-4.png" width="150"> </a> 
+<a href="pics/screenshot-1.png"> <img src="pics/screenshot-1.png" width="200"> </a> 
+<a href="pics/screenshot-2.png"> <img src="pics/screenshot-2.png" width="200"> </a> 
+<a href="pics/screenshot-3.png"> <img src="pics/screenshot-3.png" width="200"> </a> 
+<a href="pics/screenshot-4.png"> <img src="pics/screenshot-4.png" width="200"> </a> 
 
-Начальная страница, поиск станции, страница с маршрутами, описание маршрута.
+Начальная страница, поиск станции, страница с маршрутами, описание маршрута с интервалами.
 
 ## Светлое будущее
 - [ ] Проматывать `ThreadsPage` к ближайшему по времени поезду
