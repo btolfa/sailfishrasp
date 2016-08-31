@@ -8,5 +8,5 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Thu Aug 11 2016 Euf <-> 0.0.2.1-1
+* Wed Aug 31 2016 Euf <-> 0.0.2.1-1
 - Исправлен баг о неправильной лоигке показа сообщения "Выбрана прошедшая дата" в FirstPage.qml
