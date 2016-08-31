@@ -76,7 +76,6 @@ Page {
                 id: button
                 width: parent.width
                 height: Theme.itemSizeMedium
-                //                anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     var currentDate = new Date();
                     var dateForCalendar = dateLabel.areSelectedAndCurrentDateEqual() === true ?
@@ -89,13 +88,7 @@ Page {
                         dateLabel.selectedDate = dialog.date;
                         dateLabel.text = Util.formatDateWeekday(dialog.date);
                         var isEarlierDate = false;
-                        if (dialog.date.getFullYear() < currentDate.getFullYear) {
-                            isEarlierDate = true;
-                        }
-                        else if (dialog.date.getMonth() < currentDate.getMonth) {
-                            isEarlierDate = true;
-                        }
-                        else if (dialog.date.getDate() < currentDate.getDate()) {
+                        if (dialog.date < currentDate) {
                             isEarlierDate = true;
                         }
                         badDate.visible = isEarlierDate;
@@ -121,9 +114,11 @@ Page {
                             return true;
                         }
                     }
-                    text: {var currentDate = new Date();
+                    text: {
+                        var currentDate = new Date();
                         dateLabel.selectedDate = currentDate;
-                        return Util.formatDateWeekday(currentDate)}
+                        return Util.formatDateWeekday(currentDate)
+                    }
                     color: button.highlighted ? Theme.highlightColor : Theme.primaryColor
                     font.pixelSize: Theme.fontSizeLarge
                 }
@@ -150,7 +145,6 @@ Page {
             SectionHeader {
                 id: badDate
                 visible: false
-                //                color: "red"
                 text: qsTr("Выбрана прошедшая дата")
             }
 
@@ -190,14 +184,11 @@ Page {
             // КНОПКА ПОИСКА
 
             Button {
-                //enabled: searchFrom.stationEsr && searchTo.stationEsr
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Поиск")
                 onClicked: {
-                    //if (searchFrom.stationEsr && searchTo.stationEsr) {
                     qmlHandler.getRoute(searchFrom.stationEsr, searchTo.stationEsr, dateLabel.selectedDate);
                     pageStack.push(Qt.resolvedUrl("ThreadsPage.qml"), {qmlHandler: qmlHandler});
-                    //}
                 }
             }
         }
