@@ -101,8 +101,13 @@
 <context>
     <name>ZonePage</name>
     <message>
-        <location filename="../qml/pages/ZonePage.qml" line="13"/>
+        <location filename="../qml/pages/ZonePage.qml" line="34"/>
         <source>Регионы</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ZonePage.qml" line="40"/>
+        <source>Поиск</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

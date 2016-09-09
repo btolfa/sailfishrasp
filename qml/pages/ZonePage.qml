@@ -8,27 +8,62 @@ Page {
     signal accepted(int id, string text)
     property QmlHandler qmlHandler
 
-    // Заголовок
-    PageHeader {
-        title: qsTr("Регионы")
-        id: zonePageHeader
-        height: Theme.itemSizeLarge
+    property var timeZoneId: {return null}
+
+    function getZonesLike(text) {
+         return qmlHandler.getZonesLike(text);
     }
 
-    property var timeZoneId: {return null}
+    function getAllZones() {
+         return qmlHandler.getAllZones();
+    }
+
     SilicaListView {
         id: listView
-        model: ListModel {}
+
         anchors.fill: parent
-        anchors.topMargin: Theme.itemSizeLarge
 
-        function getZonesLike(text) {
-             return qmlHandler.getZonesLike(text);
+        header: Column {
+            width: listView.width
+            spacing: 0
+
+            property alias searchField: searchField
+
+            // Заголовок
+            PageHeader {
+                title: qsTr("Регионы")
+            }
+            SearchField {
+                id: searchField
+
+                width: parent.width
+                placeholderText: qsTr("Поиск")
+
+                onTextChanged: {
+                    listModel.update()
+                }
+            }
         }
 
-        function getAllZones() {
-             return qmlHandler.getAllZones();
+        model: ListModel {
+            id: listModel
+
+            function update() {
+                clear()
+
+                var searchField = listView.headerItem.searchField
+                var results = getZonesLike(searchField.text);
+                for (var i in results) {
+                    listModel.append(results[i])
+                }
+            }
+
+            Component.onCompleted: {
+                update()
+            }
         }
+
+        currentIndex: -1
 
         delegate: BackgroundItem {
             id: delegate
@@ -42,12 +77,6 @@ Page {
             onClicked: {
                 zoneDialog.accepted(code, title);
                 pageStack.pop();
-            }
-        }
-        Component.onCompleted: {
-            var results = getAllZones();
-            for (var i in results) {
-                listView.model.append(results[i]);
             }
         }
         VerticalScrollDecorator {}
