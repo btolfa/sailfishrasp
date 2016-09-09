@@ -31,32 +31,34 @@ Page {
     }
 
     SilicaListView {
-        //    ListView {
         id: listView
         model: qmlHandler.routeModel
         anchors.fill: parent
         header: PageHeader {
             title: qsTr("Маршруты по направлению")
         }
+
         ViewPlaceholder {
             id: viewPlaceholder
             enabled: listView.count == 0 && !busyIndicator.running
             text: ""
         }
+
         delegate: ListItem {
             id: delegate
             contentHeight: Theme.itemSizeLarge
-            anchors {
-                left: parent.left
-                right: parent.right
-                leftMargin: Theme.horizontalPageMargin
-                rightMargin: Theme.horizontalPageMargin
-            }
+
             Column {
                 id: leftColumn
-                anchors.left: parent.left
+                anchors {
+                    left: parent.left
+                    leftMargin: Theme.horizontalPageMargin
+                    verticalCenter: parent.verticalCenter
+                }
+
                 Label {
                     id: departureTime
+                    anchors.horizontalCenter: leftColumn.horizontalCenter
                     font.pixelSize: Theme.fontSizeLarge
                     font.bold: true
                     text: modelData.departure.substring(11,16)
@@ -68,24 +70,28 @@ Page {
                     text: modelData.arrival.substring(11,16)
                 }
             }
+
             Label {
                 id: centerLabel
                 anchors {
                     left: leftColumn.right
+                    leftMargin: Theme.paddingMedium
                     right: rightColumn.left
+                    rightMargin: Theme.paddingMedium
                     verticalCenter: parent.verticalCenter
-                    leftMargin: Theme.paddingLarge
-                    rightMargin: Theme.paddingLarge
                 }
                 font.pixelSize: Theme.fontSizeSmall
                 wrapMode: Text.WordWrap
                 text: modelData.thread.title
-
             }
+
             Column {
                 id: rightColumn
-                anchors.right: parent.right
-                anchors.verticalCenter: parent.verticalCenter
+                anchors {
+                    verticalCenter: parent.verticalCenter
+                    right: parent.right
+                    rightMargin: Theme.horizontalPageMargin
+                }
 
                 Label {
                     id: duration

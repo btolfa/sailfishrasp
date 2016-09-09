@@ -88,12 +88,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadsPage.qml" line="39"/>
+        <location filename="../qml/pages/ThreadsPage.qml" line="38"/>
         <source>Маршруты по направлению</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadsPage.qml" line="92"/>
+        <location filename="../qml/pages/ThreadsPage.qml" line="98"/>
         <source> мин.</source>
         <translation type="unfinished"></translation>
     </message>

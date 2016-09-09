@@ -17,16 +17,17 @@ Page
             enabled: false
             property int indexOfThisDelegate: index
             height: Theme.itemSizeMedium
-            anchors {
-                left: parent.left
-                right: parent.right
-                leftMargin: Theme.horizontalPageMargin
-                rightMargin: Theme.horizontalPageMargin
-                topMargin: 0
-                bottomMargin: 0
-            }
+            width: parent.width
+
             Image {
                 id: image
+
+                anchors {
+                    left: parent.left
+                    leftMargin: Theme.horizontalPageMargin
+                    verticalCenter: parent.verticalCenter
+                }
+
                 source:
                     if (index === 0)
                     {"line-top.svg"}
@@ -45,14 +46,14 @@ Page
                 height: Theme.itemSizeMedium
                 sourceSize.width: width
                 sourceSize.height: height
-                anchors.verticalCenter: parent.verticalCenter
             }
 
             Label {
                 anchors.left: image.right
+                anchors.leftMargin: Theme.paddingMedium
                 anchors.right: time.left
-                anchors.verticalCenter: parent.verticalCenter
                 anchors.rightMargin: Theme.paddingMedium
+                anchors.verticalCenter: parent.verticalCenter
                 text: modelData.station.title
                 truncationMode: TruncationMode.Fade
                 color: if (!modelData.stop_time && index !== 0 && index !== sListView.count-1)
@@ -63,8 +64,11 @@ Page
             Label {
                 id: time
                 width: 90
-                anchors.right: parent.right
-                anchors.verticalCenter: parent.verticalCenter
+                anchors {
+                    right: parent.right
+                    rightMargin: Theme.horizontalPageMargin
+                    verticalCenter: parent.verticalCenter
+                }
                 font.pixelSize: Theme.fontSizeSmall
                 text: {
                     var resultText = "";
