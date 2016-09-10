@@ -69,10 +69,16 @@ Page {
             id: delegate
 
             Label {
-                x: Theme.paddingLarge
-                text: title //name
+                anchors.left: parent.left
+                anchors.leftMargin: Theme.horizontalPageMargin
+                anchors.right: parent.right
+                anchors.rightMargin: Theme.horizontalPageMargin
                 anchors.verticalCenter: parent.verticalCenter
+
+                elide: Text.ElideRight
+
                 color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
+                text: title //name
             }
             onClicked: {
                 zoneDialog.accepted(code, title);
