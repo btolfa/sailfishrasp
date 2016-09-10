@@ -8,5 +8,6 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Wed Aug 31 2016 Euf <-> 0.0.2.1-1
-- Исправлен баг о неправильной логике показа сообщения "Выбрана прошедшая дата" в FirstPage.qml
+* Sat Sep 10 2016 Maledictus <-> 0.0.3-1
+- Добавлен поиск в ZonesPage
+- Исправлены несколько margins и anchors
