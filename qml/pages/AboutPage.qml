@@ -9,10 +9,14 @@ Page {
 
         PageHeader {
             id: header
-            title: ("О программе")
+            title: qsTr("О программе")
         }
         Label {
-            text: "Версия 0.2"
+            text: qsTr("Suburban Trains")
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+        Label {
+            text: qsTr("Версия 0.3.1")
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
