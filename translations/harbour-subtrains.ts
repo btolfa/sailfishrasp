@@ -4,27 +4,27 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="12"/>
+        <location filename="../qml/pages/AboutPage.qml" line="11"/>
         <source>О программе</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="15"/>
+        <location filename="../qml/pages/AboutPage.qml" line="14"/>
         <source>Suburban Trains</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="19"/>
-        <source>Версия 0.3.1</source>
+        <location filename="../qml/pages/AboutPage.qml" line="18"/>
+        <source>Версия 0.3.2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="25"/>
+        <location filename="../qml/pages/AboutPage.qml" line="24"/>
         <source>Авторы</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="26"/>
+        <location filename="../qml/pages/AboutPage.qml" line="25"/>
         <source>Евгений Файвужинский,
 Тенгиз Шарафиев,
 Алексей Бедник,
@@ -37,47 +37,47 @@
 <context>
     <name>FirstPage</name>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="27"/>
+        <location filename="../qml/pages/FirstPage.qml" line="29"/>
         <source>О программе</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="32"/>
+        <location filename="../qml/pages/FirstPage.qml" line="34"/>
         <source>Сменить пригородную зону</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="63"/>
+        <location filename="../qml/pages/FirstPage.qml" line="65"/>
         <source>Расписание электричек</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="69"/>
+        <location filename="../qml/pages/FirstPage.qml" line="71"/>
         <source>Регион</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="70"/>
+        <location filename="../qml/pages/FirstPage.qml" line="72"/>
         <source>Москва и область</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="148"/>
+        <location filename="../qml/pages/FirstPage.qml" line="150"/>
         <source>Выбрана прошедшая дата</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="156"/>
+        <location filename="../qml/pages/FirstPage.qml" line="158"/>
         <source>Откуда</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="172"/>
+        <location filename="../qml/pages/FirstPage.qml" line="174"/>
         <source>Куда</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="188"/>
+        <location filename="../qml/pages/FirstPage.qml" line="190"/>
         <source>Поиск</source>
         <translation type="unfinished"></translation>
     </message>
@@ -85,7 +85,7 @@
 <context>
     <name>ThreadInfo</name>
     <message>
-        <location filename="../qml/pages/ThreadInfo.qml" line="13"/>
+        <location filename="../qml/pages/ThreadInfo.qml" line="15"/>
         <source>Интервалы остановок</source>
         <translation type="unfinished"></translation>
     </message>
@@ -93,22 +93,22 @@
 <context>
     <name>ThreadsPage</name>
     <message>
-        <location filename="../qml/pages/ThreadsPage.qml" line="21"/>
+        <location filename="../qml/pages/ThreadsPage.qml" line="23"/>
         <source>Не нашлось подходящих маршрутов :(</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadsPage.qml" line="26"/>
+        <location filename="../qml/pages/ThreadsPage.qml" line="28"/>
         <source>Что-то пошло не так. Пожалуйста, проверьте, что у вас включена передача данных и попробуйте снова</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadsPage.qml" line="38"/>
+        <location filename="../qml/pages/ThreadsPage.qml" line="40"/>
         <source>Маршруты по направлению</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadsPage.qml" line="98"/>
+        <location filename="../qml/pages/ThreadsPage.qml" line="100"/>
         <source> мин.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -116,12 +116,12 @@
 <context>
     <name>ZonePage</name>
     <message>
-        <location filename="../qml/pages/ZonePage.qml" line="34"/>
+        <location filename="../qml/pages/ZonePage.qml" line="35"/>
         <source>Регионы</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ZonePage.qml" line="40"/>
+        <location filename="../qml/pages/ZonePage.qml" line="41"/>
         <source>Поиск</source>
         <translation type="unfinished"></translation>
     </message>

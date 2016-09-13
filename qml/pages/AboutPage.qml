@@ -1,6 +1,5 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import subtrains 1.0
 
 Page {
     Column {
@@ -16,7 +15,7 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
         }
         Label {
-            text: qsTr("Версия 0.3.1")
+            text: qsTr("Версия 0.3.2")
             anchors.horizontalCenter: parent.horizontalCenter
         }
 

@@ -58,9 +58,9 @@ int main(int argc, char *argv[])
 
     loadDb();
 
-    qmlRegisterType<QmlHandler>("subtrains", 1, 0, "QmlHandler");
-    qmlRegisterType<Positioning>("subtrains", 1, 0, "Positioning");
-    qmlRegisterType<SearchHint>("subtrains", 1, 0, "SearchHint");
+    qmlRegisterType<QmlHandler>("harbour.subtrains.qmlHandler", 1, 0, "QmlHandler");
+    qmlRegisterType<Positioning>("harbour.subtrains.positioning", 1, 0, "Positioning");
+    qmlRegisterType<SearchHint>("harbour.subtrains.searchHint", 1, 0, "SearchHint");
 
     QQuickView* qView = SailfishApp::createView();
     qView->setSource(SailfishApp::pathTo("qml/harbour-subtrains.qml"));

@@ -1,6 +1,8 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import subtrains 1.0
+import harbour.subtrains.positioning 1.0
+import harbour.subtrains.searchHint 1.0
+import harbour.subtrains.qmlHandler 1.0
 import "../views"
 import "Util.js" as Util
 
