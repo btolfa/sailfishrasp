@@ -90,6 +90,9 @@ Page {
                         dateLabel.selectedDate = dialog.date;
                         dateLabel.text = Util.formatDateWeekday(dialog.date);
                         var isEarlierDate = false;
+                        //set time part to all zeroes to compare only the part of date without time.
+                        currentDate.setHours(0,0,0,0);
+                        dialog.date.setHours(0,0,0,0);
                         if (dialog.date < currentDate) {
                             isEarlierDate = true;
                         }

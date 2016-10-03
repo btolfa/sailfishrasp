@@ -8,5 +8,5 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Tue Sep 13 2016 Spaguette <-> 0.0.3.2-1
-- Исправлены названия импортов для jolla harbour
+* Mon Oct 03 2016 Spaguette <-> 0.0.3.3-1
+- Исправлен баг с неправильным сравнением дат для сообщения о прошедшей дате на первой странице.

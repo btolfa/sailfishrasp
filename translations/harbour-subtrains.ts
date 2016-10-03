@@ -62,22 +62,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="150"/>
+        <location filename="../qml/pages/FirstPage.qml" line="153"/>
         <source>Выбрана прошедшая дата</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="158"/>
+        <location filename="../qml/pages/FirstPage.qml" line="161"/>
         <source>Откуда</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="174"/>
+        <location filename="../qml/pages/FirstPage.qml" line="177"/>
         <source>Куда</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="190"/>
+        <location filename="../qml/pages/FirstPage.qml" line="193"/>
         <source>Поиск</source>
         <translation type="unfinished"></translation>
     </message>
