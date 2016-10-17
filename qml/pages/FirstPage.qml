@@ -153,6 +153,7 @@ Page {
                 text: qsTr("Выбрана прошедшая дата")
             }
 
+
             // ОТКУДА
 
             SearchBox {
@@ -183,7 +184,22 @@ Page {
                     searchFrom.visible = !focusState;
                 }
                 width: parent.width
+            }
 
+            Button {
+                text: qsTr("Switch")
+                property var fromValue: null
+                property var fromStationEsr: null
+                onClicked: {                  
+                    fromStationEsr = searchFrom.stationEsr;
+                    searchFrom.stationEsr = searchTo.stationEsr;
+                    searchTo.stationEsr = fromStationEsr;
+                    fromStationEsr = null;
+                    fromValue = searchFrom.textValue;
+                    searchFrom.setText(searchTo.textValue);
+                    searchTo.setText(fromValue);
+                    fromValue = null;
+                }
             }
 
             // КНОПКА ПОИСКА

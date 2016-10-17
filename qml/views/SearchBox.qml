@@ -9,6 +9,13 @@ Column {
     property alias placeHolderText: searchField.placeholderText
     height: searchRow.height + hints.height
     width: parent.width
+    property var textValue: searchField.text
+    property var switched: false
+
+    function setText(text) {
+        searchColumn.switched = true;
+        searchField.text = text;
+    }
 
     signal changeFocus(bool focusState)
 
@@ -44,14 +51,17 @@ Column {
 
             onTextChanged: {
                 hints.model.clear();
-                stationEsr = null;
 
-                if (text.length > 0) {
+                if (text.length > 0 && !searchColumn.switched) {
+                    stationEsr = null;
                     var results = qmlHandler.getStationHints(text, zoneId);
                     for (var i in results) {
                         hints.model.append(results[i]);
                     }
+                } else {
+                    searchColumn.switched = false;
                 }
+                searchColumn.textValue = text;
             }
 
             onActiveFocusChanged: {
@@ -60,7 +70,7 @@ Column {
                 if (!activeFocus) {
                     var item = hints.model.get(0);
                     if (item) {
-                        stationEsr = item.code;
+                        searchColumn.stationEsr = item.code;
                         searchField.text = item.title;
                     }
 
@@ -71,13 +81,13 @@ Column {
             }
         }
 
-//        IconButton{
-//            id: locateFrom
-//            anchors.verticalCenter: parent.verticalCenter
-//            //onClicked: whereFrom()
-//            //icon.source:
-//            //    "image://theme/icon-m-whereami"
-//        }
+        //        IconButton{
+        //            id: locateFrom
+        //            anchors.verticalCenter: parent.verticalCenter
+        //            //onClicked: whereFrom()
+        //            //icon.source:
+        //            //    "image://theme/icon-m-whereami"
+        //        }
     }
 
     SilicaListView {
@@ -107,7 +117,7 @@ Column {
 
             onClicked: {
                 searchField.text = title;
-                stationEsr = esrId;
+                searchColumn.stationEsr = esrId;
                 hints.model.clear();
             }
         }
